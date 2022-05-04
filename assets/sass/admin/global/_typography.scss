@@ -1,0 +1,94 @@
+// ============================================== //
+// ================ SNAPSHOT 3.0 ================ //
+// ============================================== //
+// ======== by Leighton Sapir (WPMU DEV) ======== //
+// ============================================== //
+
+.snapshot-three {
+	h1, h2, h3, h4, h5, h6 {
+		max-width: none;
+		display: block;
+		margin: 0;
+		padding: 0;
+		border: 0;
+	}
+	h1, h2, h3 {
+		letter-spacing: -0.3px;
+	}
+	h1 {
+		color: $color--mineshaft;
+		font: 700 32px/40px $font--alt;
+		text-transform: uppercase;
+	}
+	h2 {
+		color: $color--steel;
+		font: 700 22px/35px $font--alt;
+		text-transform: uppercase;
+	}
+	h3 {
+		color: $color--mineshaft;
+		font: 700 18px/30px $font--alt;
+		text-transform: uppercase;
+	}
+	h4 {
+		color: $color--mineshaft;
+		font: 700 16px/30px $font--alt;
+		letter-spacing: -0.13px;
+	}
+	h5 {
+		color: $color--steel;
+		font: 700 13px/20px $font--alt;
+		letter-spacing: -0.15px;
+		text-transform: uppercase;
+	}
+	p {
+		color: $color--steel;
+		font: 400 15px/30px $font;
+		letter-spacing: -0.25px;
+		small {
+			margin: 0;
+			color: $color--taupegray;
+			font: 400 13px/20px $font;
+			letter-spacing: -0.16px;
+		}
+		&.has-typecon {
+			position: relative;
+			padding-left: 30px;
+			.wps-typecon {
+				position: absolute;
+				left: 0;
+			}
+		}
+	}
+	.wps-managed-backups-configs p small {
+		letter-spacing: -0.25px;
+		line-height: 22px;
+	}
+	label {
+		&.label-box {
+			cursor: text;
+			margin: 0;
+			padding: 0;
+			color: $color--mineshaft;
+			font: 500 15px/32px $font;
+			letter-spacing: -0.25px;
+		}
+		&.label-title {
+			cursor: text;
+			margin: 0 0 28px;
+			padding: 0 0 19px;
+			border-bottom: 1px solid $color--whitelilac;
+			color: $color--steel;
+			font: 400 15px/32px $font;
+			letter-spacing: -0.25px;
+		}
+	}
+	h1, h2, h3, h4, h5, h6, p, small, ul, li, label {
+		a {
+			color: $color--cerulean;
+			&:hover, &:active, &:focus {
+				color: $color--bluegreen;
+			}
+		}
+	}
+}

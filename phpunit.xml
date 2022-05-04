@@ -1,0 +1,26 @@
+<phpunit
+	bootstrap="tests/bootstrap.php"
+	backupGlobals="false"
+	colors="true"
+	convertErrorsToExceptions="true"
+	convertNoticesToExceptions="true"
+	convertWarningsToExceptions="true"
+	>
+	<testsuites>
+		<testsuite name="test">
+			<directory prefix="test-" suffix=".php" phpVersion="5.2.4" phpVersionOperator=">=">./tests/</directory>
+		</testsuite>
+	</testsuites>
+	<filter>
+		<whitelist processUncoveredFilesFromWhitelist="true">
+			<directory suffix=".php">./lib/Snapshot/</directory>
+			<exclude>
+				<directory suffix=".php">./lib/Snapshot/Model/Destination/aws/AWSSDKforPHP/</directory>
+				<directory suffix=".php">./lib/Snapshot/Model/Destination/dropbox/includes/</directory>
+				<directory suffix=".php">./lib/Snapshot/Model/Destination/dropbox/vendor/</directory>
+				<directory suffix=".php">./lib/Snapshot/Model/Destination/ftp/phpseclib1.0.10/</directory>
+				<directory suffix=".php">./lib/Snapshot/Model/Destination/google-drive/Google/</directory>
+			</exclude>
+		</whitelist>
+	</filter>
+</phpunit>

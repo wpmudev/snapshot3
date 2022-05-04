@@ -1,0 +1,38 @@
+@import "~@wpmudev/shared-ui/scss/functions";
+@import "~@wpmudev/shared-ui/scss/colors";
+@import "~@wpmudev/shared-ui/scss/variables";
+@import "~@wpmudev/shared-ui/scss/mixins";
+
+$sui-version: 'component-snapshot';
+$sui-wrap-class: false;
+@import "~@wpmudev/shared-ui/scss/tooltips.scss";
+
+@include body-class {
+	.sui-tooltip.sui-tooltip-constrained {
+		&:after {
+			min-width: 260px;
+			white-space: normal;
+			text-align: left;
+			letter-spacing: -0.25px;
+		}
+	}
+	.sui-tooltip.sui-tooltip-small {
+		&:after {
+			min-width: auto;
+			white-space: normal;
+			text-align: left;
+			letter-spacing: -0.25px;
+		}
+	}
+
+	.snapshot-hosting-backup-restore.sui-tooltip-left:after {
+		width: 200px;
+		white-space: normal;
+		text-align: left;
+		margin-right: 28px;
+	}
+
+	.snapshot-hosting-backup-restore.sui-tooltip-left:before {
+		margin-right: 18px;
+	}
+}

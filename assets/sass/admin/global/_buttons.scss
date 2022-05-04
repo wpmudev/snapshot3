@@ -1,0 +1,95 @@
+// ============================================== //
+// ================ SNAPSHOT 3.0 ================ //
+// ============================================== //
+// ======== by Leighton Sapir (WPMU DEV) ======== //
+// ============================================== //
+
+.wpmud .snapshot-three button:not(.wph-button):not(#collapse-button),
+.wpmud #container.snapshot-three button:not(.wph-button):not(#collapse-button),
+.wpmud .snapshot-three .button,
+.wpmud #container.snapshot-three .button {
+	margin: 0;
+	padding: 8px 17px 6px;
+	font: 500 12px/16px $font;
+	letter-spacing: -0.25px;
+	text-align: center;
+	transition: 0.25s ease;
+	&:first-child {
+		margin-left: 0;
+	}
+	&.button-blue {
+		background: $color--cerulean;
+		background-color: $color--cerulean;
+		&:hover, &:active, &:focus {
+			background: $color--bluegreen !important;
+			background-color: $color--bluegreen !important;
+		}
+	}
+	&.button-gray {
+		background: $color--taupegray;
+		background-color: $color--taupegray;
+		&:hover, &:active, &:focus {
+			background-color: $color--steel !important;
+		}
+	}
+	&.button-green {
+		background: $color--seagreen;
+		background-color: $color--seagreen;
+		&:hover, &:active, &:focus {
+			background-color: $color--niagara !important;
+		}
+	}
+	&.button-outline {
+		padding: 6px 15px 4px;
+		border: 2px solid $color--cerulean;
+		background-color: transparent;
+		color: $color--cerulean;
+		text-transform: uppercase;
+		&:hover, &:active, &:focus {
+			border-color: $color--bluegreen !important;
+			background: transparent !important;
+			background-color: transparent !important;
+			color: $color--bluegreen !important;
+		}
+		&.button-gray {
+			border-color: $color--taupegray;
+			background: transparent;
+			color: $color--taupegray;
+			&:hover, &:active, &:focus {
+				border-color: $color--steel !important;
+				background: transparent !important;
+				background-color: transparent !important;
+				color: $color--steel !important;
+			}
+		}
+		@include screen("xs") {
+			padding: 9px 18px 7px;
+		}
+	}
+	&.button-small {
+		padding: 8px 17px 6px;
+		font: 500 12px/16px $font;
+		letter-spacing: -0.25px;
+		&.button-outline {
+			padding: 6px 15px 4px;
+			&:hover, &:active, &:focus {
+				padding: 6px 15px 4px;
+			}
+		}
+	}
+	&.button-disabled {
+		&, &:hover, &:active, &:focus {
+			color: #a0a5aa !important;
+			border-color: #ddd !important;
+			background: #f7f7f7 !important;
+			cursor: default;
+		}
+	}
+	&:active {
+		transform: none;
+	}
+	@include screen("xs") {
+		padding: 11px 22px 9px;
+		font: 500 15px/20px $font;
+	}
+}

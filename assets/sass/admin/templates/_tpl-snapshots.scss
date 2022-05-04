@@ -1,0 +1,746 @@
+// ============================================== //
+// ================ SNAPSHOT 3.0 ================ //
+// ============================================== //
+// ======== by Leighton Sapir (WPMU DEV) ======== //
+// ============================================== //
+
+// Widget: Get Started
+.wpmud #container.snapshot-three .get-started-box {
+	.wpmud-box-content {
+		padding: 30px 0;
+		p {
+			max-width: 980px;
+			margin: 0 auto 30px;
+			text-align: center;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		a {
+			min-width: 176px;
+		}
+	}
+}
+
+// Widget: Try Managed Backups
+.wpmud #container.snapshot-three .try-managed-backups-box {
+	.wpmud-box-content {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		align-items: center;
+		padding: 30px 30px 0;
+		&:before {
+			content: " ";
+			width: 128px;
+			flex: 0 128px;
+			margin: 0 auto 20px;
+			border-radius: 100%;
+			background: url("../img/sprite.png") no-repeat transparent;
+			background-image: url("../img/sprite.svg"), none;
+			background-position: -410px -335px;
+			@include screen("medium") {
+				height: 180px;
+				flex: 0 141px;
+				margin: 0;
+				border-radius: 0;
+				background-position: -389px 0;
+			}
+		}
+		@include screen("medium") {
+			flex-direction: row;
+			align-items: flex-end;
+		}
+	}
+	.wpmud-box-content-wrap {
+		flex: 1;
+		p {
+			margin-bottom: 20px;
+			text-align: center;
+			a:not(.button) {
+				position: relative;
+				top: -1px;
+				margin-left: 17px;
+				color: $color--taupegray;
+				&:hover, &:focus, &:active {
+					color: $color--steel;
+				}
+			}
+			&:last-child {
+				margin-bottom: 20px;
+				@include screen('large') {
+					margin-bottom: 30px;
+				}
+			}
+			&.align-buttons {
+				a.button {
+					max-width: 220px;
+					display: block;
+					margin: 0 auto;
+					@include screen("medium") {
+						max-width: none;
+						display: inline-block;
+						margin: 0;
+					}
+				}
+				a:not(.button) {
+					margin-top: 17px;
+					margin-left: 0;
+					@include screen("medium") {
+						margin-top: 0;
+						margin-left: 17px;
+					}
+				}
+			}
+			@include screen("medium") {
+				text-align: left;
+			}
+		}
+		@include screen("medium") {
+			padding-left: 29px;
+		}
+	}
+}
+
+// Widget: Available Snapshots
+.wpmud #container.snapshot-three .available-snapshots {
+	.wpmud-box-gray {
+		padding: 20px 20px 15px;
+		text-align: left;
+		form {
+			display: block;
+			&:before,
+			&:after {
+				content: "";
+				display: table;
+				*zoom: 1; // IE Fix
+			}
+			&:after {
+				clear: both;
+			}
+		}
+		.filter-label,
+		.select-container,
+		.button {
+			display: block;
+			@include screen('small') {
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+		.filter-label {
+			@include screen('small') {
+				position: relative;
+				top: -2px;
+				margin-right: 17px;
+				margin-left: 5px;
+				line-height: 40px;
+			}
+		}
+		.select-container {
+			.select-list-container .list-value {
+				min-width: 143px;
+			}
+		}
+		.button {
+			width: 86px;
+			margin-top: 15px !important;
+			padding: 9px 10px 7px !important;
+			text-align: center;
+			@include screen('small') {
+				margin-top: 0 !important;
+				margin-left: 6px !important;
+			}
+		}
+		@include screen("medium") {
+			text-align: center;
+		}
+	}
+	.snapshots-import-msg {
+		margin-bottom: 25px;
+		p {
+			margin-top: 10px;
+			color: #888;
+			font-size: 13px;
+			line-height: 20px;
+		}
+	}
+	.my-snapshots {
+		margin-top: 30px;
+		.my-snapshots-filter {
+			display: none;
+			flex-wrap: wrap;
+			flex-direction: column;
+			position: relative;
+			.msf-left, .msf-right {
+				display: inline-flex;
+				flex: 1;
+				flex-wrap: wrap;
+				flex-direction: column;
+				align-items: center;
+				@include screen("xs") {
+					flex-direction: row;
+				}
+			}
+			.msf-left {
+				align-items: flex-start;
+				margin-bottom: 30px;
+				.select-container {
+					min-width: 100%;
+					flex: 1;
+					margin-bottom: 10px;
+					.select-list-container .list-value {
+						min-width: 113px;
+					}
+					@include screen("xs") {
+						min-width: 160px;
+						flex: 0;
+						margin-right: 10px;
+						margin-bottom: 0;
+					}
+				}
+				.button {
+					padding: 9px 20px 7px !important;
+					text-align: center;
+				}
+				@include screen("xs") {
+					align-items: center;
+				}
+				@include screen("medium") {
+					margin-bottom: 0;
+				}
+			}
+			.msf-right {
+				padding-top: 15px;
+				border-top: 1px dotted $color--whitelilac;
+				justify-content: center;
+				.results-count {
+					position: relative;
+					top: 1px;
+				}
+				&.pagination-enabled {
+					justify-content: center;
+					.results-count {
+						margin-bottom: 15px;
+						@include screen("xs") {
+							position: absolute;
+							top: 8px;
+							right: 0;
+							margin-bottom: 0;
+						}
+						@include screen("medium") {
+							position: relative;
+							top: 0;
+							right: auto;
+							margin-right: 17px;
+						}
+					}
+					@include screen("medium") {
+						justify-content: flex-end;
+						text-align: right;
+					}
+				}
+				@include screen("xs") {
+					padding-top: 0;
+					border-top: 0;
+					justify-content: flex-start;
+				}
+				@include screen("medium") {
+					justify-content: flex-end;
+				}
+			}
+			ul.my-snapshot-pagination {
+				display: inline-flex;
+				margin: 0;
+				border: 1px solid $color--whitelilac;
+				border-radius: 4px;
+				li.pagination-number {
+					flex: 1;
+					margin: 0;
+					border-right: 1px solid $color--whitelilac;
+					display: inline-block;
+					list-style: none;
+					text-align: center;
+					.page-numbers {
+						min-width: 49px;
+						display: block;
+						padding: 4px 8px;
+						font: 400 15px/30px $font;
+						letter-spacing: 0;
+						text-align: center;
+					}
+					a.page-numbers {
+						color: $color--cerulean;
+						&:hover {
+							color: $color--bluegreen;
+						}
+					}
+					span.page-numbers {
+						color: $color--steel;
+					}
+					&:last-child {
+						border-right: 0;
+					}
+				}
+				li.pagination-number {
+					a.next, a.prev {
+						min-width: 49px;
+						padding: 0 8px;
+						&.disabled {
+							opacity: 1;
+							pointer-events: none;
+							color: $color--silver;
+						}
+						&:before {
+							position: relative;
+							top: 4px;
+							font-size: 11px;
+							line-height: 20px;
+							font-family: $font--icon;
+						}
+					}
+					a.prev:before {
+						content: $i-arrow-left;
+					}
+					a.next:before {
+						content: $i-arrow-right;
+					}
+				}
+			}
+			&:first-child {
+				z-index: 2;
+			}
+			&:last-child {
+				display: flex;
+				z-index: 0;
+			}
+			@include screen("medium") {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+			}
+		}
+		.my-snapshots-content {
+			position: relative;
+			z-index: 1;
+			table {
+				margin: 15px 0 31px;
+				thead tr th,
+				tbody tr td {
+					&.msc-check {
+						width: 20px;
+					}
+					&.msc-name {
+						padding-left: 10px;
+					}
+					&.msc-type {
+						padding-left: 10px;
+						@include screen('small') {
+							width: 60px;
+						}
+						@include screen(medium) {
+							width: 80px;
+						}
+					}
+					&.msc-frequency {
+						@include screen("medium") {
+							width: 120px;
+							padding-left: 10px;
+						}
+					}
+					&.msc-size {
+						@include screen("medium") {
+							width: 80px;
+							padding-left: 10px;
+						}
+						@include screen('large') {
+							width: 100px;
+						}
+					}
+					&.msc-date {
+						@include screen("medium") {
+							width: 100px;
+							padding-left: 7px;
+						}
+						@include screen('large') {
+							width: 170px;
+						}
+					}
+					&.msc-info {
+						@include screen("medium") {
+							width: 100px;
+						}
+						@include screen('large') {
+							width: 140px;
+						}
+					}
+				}
+				thead {
+					tr th {
+						padding: 13px 0 1px;
+						.wps-input--checkbox {
+							position: relative;
+							top: 2px;
+						}
+					}
+				}
+				tbody {
+					tr {
+						display: flex;
+						flex-wrap: wrap;
+						flex-direction: row;
+						position: relative;
+						padding: 20px 0;
+						border-bottom: 1px solid $color--whitelilac;
+						td {
+							.wps-input--checkbox {
+								position: relative;
+								top: -2px;
+							}
+							.wps-typecon {
+								margin: 0;
+							}
+							&.msc-check,
+							&.msc-name {
+								display: block;
+								word-break: break-all;
+								@include screen("medium") {
+									display: table-cell;
+									padding: 10px 0 8px;
+								}
+							}
+							&.msc-check {
+								height: 20px;
+								position: absolute;
+								top: 35px;
+								padding: 0;
+								@include screen("medium") {
+									height: auto;
+									position: relative;
+									top: 0;
+								}
+							}
+							&.msc-check-local {
+								position: relative;
+								transform-style: preserve-3d;
+								.wps-input--checkbox {
+									position: absolute;
+									top: 50%;
+									left: 0;
+									transform: translateY(-50%);
+								}
+							}
+							&.msc-name {
+								flex: 0 100%;
+								margin-bottom: 10px;
+								padding-right: 50px;
+								padding-left: 30px;
+								@include screen("medium") {
+									margin-bottom: 0;
+									padding-right: 0;
+									padding-left: 20px;
+								}
+							}
+							&.msc-type {
+								display: none;
+								@include screen("medium") {
+									display: table-cell;
+								}
+							}
+							&.msc-frequency,
+							&.msc-size,
+							&.msc-date {
+								padding: 10px;
+								border: 1px solid $color--lily;
+								border-radius: 5px;
+								background: $color--hint;
+								font-size: 12px;
+								&:before {
+									content: attr(data-text);
+									display: block;
+									color: $color--mineshaft;
+									font-weight: 500;
+									@include screen("xs") {
+										display: inline;
+									}
+									@include screen("medium") {
+										display: none;
+									}
+								}
+								@include screen("medium") {
+									padding: 10px 0 8px;
+									border: 0;
+									border-top: 1px solid $color--whitelilac;
+									border-radius: 0;
+									background: $color--white;
+									font-size: 13px;
+								}
+							}
+							&.msc-frequency {
+								min-width: 80px;
+								flex: 1;
+								border-right: 0;
+								border-top-right-radius: 0;
+								border-bottom-right-radius: 0;
+								@include screen("xs") {
+									flex: 0 140px;
+								}
+								@include screen("medium") {
+									min-width: 1px;
+									flex: 0;
+									padding-left: 10px;
+								}
+							}
+							&.msc-size {
+								flex: 1;
+								padding-right: 0;
+								padding-left: 0;
+								border-right: 0;
+								border-left: 0;
+								border-radius: 0;
+								@include screen("xs") {
+									flex: 0 110px;
+								}
+								@include screen("medium") {
+									flex: 0;
+									padding-left: 10px;
+								}
+							}
+							&.msc-date {
+								flex: 2;
+								border-left: 0;
+								border-top-left-radius: 0;
+								border-bottom-left-radius: 0;
+								@include screen("xs") {
+									flex: 1;
+								}
+								@include screen("medium") {
+									flex: 0;
+									padding-left: 7px;
+								}
+							}
+							&.msc-info {
+								overflow: initial;
+								position: absolute;
+								top: 35px;
+								right: 0;
+								padding: 0;
+								text-align: right;
+								.button {
+									padding: 6px 15px 4px;
+								}
+								.wps-menu .wps-menu-dots {
+									background: $color--concrete;
+									.wps-menu-dot {
+										background: $color--mineshaft;
+										@include screen("medium") {
+											background: $color--taupegray;
+										}
+									}
+									&:hover, &:focus, &:active {
+										.wps-menu-dot {
+											@include screen("medium") {
+												background: $color--mineshaft;
+											}
+										}
+										@include screen("medium") {
+											background: $color--concrete;
+										}
+									}
+									@include screen("medium") {
+										background: $color--white;
+									}
+								}
+								.wps-menu.open .wps-menu-dots {
+									background: $color--concrete;
+									.wps-menu-dot {
+										background: $color--mineshaft;
+									}
+								}
+								.wps-spinner {
+									width: 20px;
+									height: 20px;
+									display: block;
+									margin-right: 0;
+									margin-left: auto;
+								}
+								@include screen("medium") {
+									position: relative;
+									top: auto;
+									right: auto;
+									padding: 10px 0 8px;
+								}
+							}
+						}
+						&:first-child {
+							padding-top: 0;
+
+							td.msc-check,
+							td.msc-info {
+								top: 15px;
+								@include screen("medium") {
+									top: 0;
+								}
+							}
+						}
+						&:nth-child(1) td.msc-info {
+							z-index: 21;
+						}
+						&:nth-child(2) td.msc-info {
+							z-index: 20;
+						}
+						&:nth-child(3) td.msc-info {
+							z-index: 19;
+						}
+						&:nth-child(4) td.msc-info {
+							z-index: 18;
+						}
+						&:nth-child(5) td.msc-info {
+							z-index: 17;
+						}
+						&:nth-child(6) td.msc-info {
+							z-index: 16;
+						}
+						&:nth-child(7) td.msc-info {
+							z-index: 15;
+						}
+						&:nth-child(8) td.msc-info {
+							z-index: 14;
+						}
+						&:nth-child(9) td.msc-info {
+							z-index: 13;
+						}
+						&:nth-child(10) td.msc-info {
+							z-index: 12;
+						}
+						&:nth-child(11) td.msc-info {
+							z-index: 11;
+						}
+						&:nth-child(12) td.msc-info {
+							z-index: 10;
+						}
+						&:nth-child(13) td.msc-info {
+							z-index: 9;
+						}
+						&:nth-child(14) td.msc-info {
+							z-index: 8;
+						}
+						&:nth-child(15) td.msc-info {
+							z-index: 7;
+						}
+						&:nth-child(16) td.msc-info {
+							z-index: 6;
+						}
+						&:nth-child(17) td.msc-info {
+							z-index: 5;
+						}
+						&:nth-child(18) td.msc-info {
+							z-index: 4;
+						}
+						&:nth-child(19) td.msc-info {
+							z-index: 3;
+						}
+						&:nth-child(20) td.msc-info {
+							z-index: 2;
+						}
+						&:last-child {
+							td {
+								@include screen("medium") {
+									border-bottom: 1px solid $color--whitelilac;
+								}
+							}
+						}
+						@include screen("medium") {
+							display: table-row;
+							padding: 0;
+							border-bottom: 0;
+						}
+					}
+				}
+				a.disabled {
+					color: #bcbcbc;
+				}
+			}
+		}
+	}
+}
+
+// Widget: Snapshot Info
+.wpmud #container.snapshot-three .snapshot-info-box {
+	.wpmud-box-title .button.button-small {
+		padding: 6px 14px 4px;
+	}
+	.wpmud-box-content {
+		padding: 20px 0;
+		@include screen('small') {
+			padding: 20px 0;
+		}
+	}
+	table.has-footer {
+		margin: 0;
+		tbody {
+			tr {
+				border-bottom: 1px dotted $color--whitelilac;
+				th, td {
+					border-top: 0;
+				}
+				th {
+					vertical-align: top;
+					padding-top: 15px;
+					font-weight: 500;
+					@include screen("medium") {
+						width: 150px;
+						padding-top: 10px;
+					}
+				}
+				td {
+					padding-top: 0;
+					padding-bottom: 15px;
+					.wps-typecon {
+						display: inline-block;
+						margin: 0;
+					}
+					.button {
+						width: 100%;
+						display: block;
+						text-align: center;
+						+ .button {
+							margin-top: 10px;
+							@include screen("xs") {
+								margin-top: 0;
+								margin-left: 8px;
+							}
+						}
+						@include screen("xs") {
+							width: auto;
+							display: inline-block;
+						}
+					}
+					@include screen("medium") {
+						padding-top: 10px;
+						padding-bottom: 8px;
+						padding-left: 20px;
+					}
+				}
+				&:last-child {
+					border-bottom: 0;
+				}
+				@include screen("medium") {
+					border-bottom: 0;
+				}
+			}
+		}
+		tfoot {
+			tr td {
+				&:last-child {
+					text-align: right;
+				}
+			}
+		}
+	}
+	.wps-menu {
+		a.disabled {
+			color: #bcbcbc;
+		}
+	}
+}

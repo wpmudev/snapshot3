@@ -1,0 +1,106 @@
+// ============================================== //
+// ================ SNAPSHOT 3.0 ================ //
+// ============================================== //
+// ======== by Leighton Sapir (WPMU DEV) ======== //
+// ============================================== //
+
+.wps-menu {
+	position: relative;
+	.wps-menu-dots {
+		width: 40px;
+		height: 30px;
+		cursor: pointer;
+		display: flex;
+		margin: 0 0 0 auto;
+		padding: 13px 12px;
+		border-radius: 4px;
+		background: $color--white;
+		.wps-menu-dot {
+			height: 4px;
+			flex: 0 4px;
+			margin-right: 2px;
+			border-radius: 100%;
+			background: $color--taupegray;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		&:hover, &:focus {
+			background: $color--concrete;
+			.wps-menu-dot {
+				background: $color--mineshaft;
+			}
+		}
+	}
+	.wps-menu-holder {
+		opacity: 0;
+		visibility: hidden;
+		display: none;
+		position: absolute;
+		top: 40px;
+		right: 0;
+		z-index: 2;
+		transition: opacity 0.2s ease;
+		&:before, &:after {
+			content: " ";
+			width: 0;
+			height: 0;
+			position: absolute;
+			top: -6px;
+			right: 13px;
+			border-style: solid;
+			border-width: 0 7.5px 8px 7.5px;
+			border-color: transparent transparent $color--white transparent;
+		}
+		&:before {
+			top: -7px;
+			right: 12px;
+			margin-left: -8px;
+			border-width: 0 8px 8px 8px;
+			border-color: transparent transparent $color--whitelilac transparent;
+		}
+	}
+	.wps-menu-list {
+		min-width: 200px;
+		margin: 0;
+		padding: 14px 18px;
+		border: 1px solid $color--whitelilac;
+		border-radius: 5px;
+		background: $color--white;
+		transition: opacity 0.2s ease-in;
+		li {
+			margin: 0;
+			color: $color--steel;
+			font: 400 15px/30px $font;
+			letter-spacing: -0.25px;
+			text-align: left;
+			a {
+				color: $color--steel;
+				&:hover {
+					color: $color--mineshaft;
+				}
+			}
+			&.wps-menu-list-title {
+				margin-bottom: 10px;
+				border-bottom: 1px solid $color--whitelilac;
+				color: $color--mineshaft;
+				font: 700 13px/30px $font--alt;
+				letter-spacing: -0.25px;
+				text-transform: uppercase;
+			}
+		}
+	}
+	&.open {
+		.wps-menu-dots {
+			background: $color--concrete;
+			.wps-menu-dot {
+				background: $color--mineshaft;
+			}
+		}
+		.wps-menu-holder {
+			opacity: 1;
+			visibility: visible;
+			display: block;
+		}
+	}
+}

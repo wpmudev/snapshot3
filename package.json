@@ -1,0 +1,53 @@
+{
+  "name": "snapshot",
+  "version": "3.3.3",
+  "description": "WordPress plugin allowing you to take quick on-demand backup snapshots of your working WordPress database",
+  "main": "snapshot",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@wpmudev/shared-ui": "2.3.3",
+    "autoprefixer": "^7.0.1",
+    "cssnano": "^3.10.0",
+    "csso": "^3.1.1",
+    "del": "^2.2.2",
+    "grunt": "^1.0.2",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-compress": "^1.4.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^2.3.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-postcss": "^0.8.0",
+    "grunt-wp-i18n": "^1.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch": "^4.3.11",
+    "load-grunt-tasks": "^0.4.0",
+    "node-sass-tilde-importer": "^1.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/incsub/snapshot.git"
+  },
+  "keywords": [
+    "wordpress-plugin"
+  ],
+  "author": "WPMU DEV",
+  "license": "GPL-2.0",
+  "homepage": "https://bitbucket.org/incsub/snapshot#readme",
+  "scripts": {
+    "test": "grunt test"
+  }
+}

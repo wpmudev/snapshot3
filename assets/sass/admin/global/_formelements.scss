@@ -1,0 +1,248 @@
+// ============================================== //
+// ================ SNAPSHOT 3.0 ================ //
+// ============================================== //
+// ======== by Leighton Sapir (WPMU DEV) ======== //
+// ============================================== //
+
+.snapshot-three,
+.wpmud #container.snapshot-three {
+	// Inputs: Text, Password, Email, URL
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	input[type="url"] {
+		padding: 10px 15px 9px;
+		border: 1px solid $color--athens;
+		border-radius: 3px;
+		background: $color--white;
+		color: $color--montana;
+		font: 400 15px/19px $font;
+		letter-spacing: -0.25px;
+		&:-ms-input-placeholder {
+			color: $color--lightgray;
+		}
+		&:-moz-input-placeholder {
+			color: $color--lightgray;
+		}
+		&::-moz-input-placeholder {
+			color: $color--lightgray;
+		}
+		&::-webkit-input-placeholder {
+			color: $color--lightgray;
+		}
+	}
+	// Input Group: Copy
+	.wps-input--copy {
+		position: relative;
+		input {
+			width: 100%;
+			max-width: 100%;
+			+ button,
+			+ .button {
+				width: 100%;
+				display: block;
+				margin-top: 10px !important;
+				@include screen("xs") {
+					width: 110px;
+					position: absolute;
+					top: 0;
+					right: 0;
+					margin-top: 0 !important;
+					border-radius: 0 4px 4px 0;
+				}
+			}
+			@include screen("xs") {
+				padding-right: 125px;
+			}
+		}
+	}
+	// Input: Number
+	input[type="number"] {
+		height: 40px;
+		padding: 10px 3px 10px 10px;
+		border: 1px solid $color--athens;
+		border-radius: 3px;
+		background: $color--white;
+		color: $color--montana;
+		font: 400 15px/19px $font;
+		letter-spacing: -0.25px;
+		&:-ms-input-placeholder {
+			color: $color--lightgray;
+		}
+		&:-moz-input-placeholder {
+			color: $color--lightgray;
+		}
+		&::-moz-input-placeholder {
+			color: $color--lightgray;
+		}
+		&::-webkit-input-placeholder {
+			color: $color--lightgray;
+		}
+	}
+	// Input: Radio + Checkbox
+	.wps-input--radio,
+	.wps-input--checkbox {
+		width: 20px;
+		height: 20px;
+		display: inline-block;
+		margin: 0 10px 0 0;
+		input {
+			display: none;
+			& + label {
+				width: 20px;
+				height: 20px;
+				cursor: pointer;
+				display: block;
+				margin: 0;
+				padding: 0;
+				border-radius: 3px;
+				background: $color--pale;
+				&:before {
+					content: $i-check;
+					width: 20px;
+					height: 20px;
+					opacity: 1;
+					display: block;
+					position: relative;
+					top: 1px;
+					left: 0;
+					margin-top: 0;
+					padding: 0;
+					border-radius: 3px;
+					color: $color--pale;
+					font-size: 8px;
+					line-height: 20px;
+					font-family: $font--icon;
+					text-align: center;
+				}
+			}
+			&:checked + label {
+				background: $color--cerulean;
+				&:before {
+					color: $color--white;
+				}
+			}
+		}
+	}
+	.wps-input--radio {
+		input {
+			& + label {
+				border-radius: 100%;
+				&:before {
+					border-radius: 100%;
+				}
+			}
+		}
+	}
+	// Textarea
+	textarea {
+		width: 100%;
+		min-height: 100px;
+		resize: none;
+		padding: 9px 13px;
+		border: 1px solid $color--athens;
+		border-radius: 4px;
+		background: $color--white;
+		color: $color--montana;
+		font: 400 15px/20px $font;
+		letter-spacing: -0.25px;
+		&:-ms-input-placeholder {
+			color: $color--lightgray;
+		}
+		&:-moz-input-placeholder {
+			color: $color--lightgray;
+		}
+		&::-moz-input-placeholder {
+			color: $color--lightgray;
+		}
+		&::-webkit-input-placeholder {
+			color: $color--lightgray;
+		}
+	}
+	// Groups of elements
+	.wps-input--item {
+		display: block;
+		position: relative;
+		margin-bottom: 7px;
+		input[type="text"] {
+			margin: 0;
+			+ .button {
+				width: 100%;
+				margin-top: 10px;
+				@include screen("xs") {
+					width: auto;
+					min-width: 100px;
+					position: absolute;
+					top: 0;
+					right: 0;
+					margin-top: 0;
+					border-radius: 0 4px 4px 0;
+				}
+			}
+			@include screen("xs") {
+				padding-right: 115px;
+			}
+		}
+		.wps-input--radio,
+		.wps-input--checkbox {
+			position: relative;
+			top: -2px;
+			left: -1px;
+			margin-right: 6px;
+			+ label {
+				display: inline;
+				margin: 0;
+				padding: 0;
+				color: $color--steel;
+				font: 400 15px/20px $font;
+				letter-spacing: -0.25px;
+			}
+		}
+		.wps-input--checkbox {
+			top: -1px;
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+		&.current {
+			.wps-input--radio + label {
+				color: $color--mineshaft;
+			}
+		}
+	}
+	.wps-input--group {
+		+ .box-gray {
+			margin-top: 19px;
+		}
+	}
+	// Select
+	.select-container {
+		.dropdown-handle {
+			height: 35px;
+			line-height: 36px;
+			@include screen("xs") {
+				height: 38px;
+				line-height: 39px;
+			}
+		}
+		.select-list-container {
+			.list-value {
+				padding: 8px 8px 5px 14px;
+				font: 500 12px/21px $font;
+				@include screen("xs") {
+					font: 500 15px/25px $font;
+				}
+			}
+			.list-results {
+				max-height: 210px;
+				overflow-x: hidden;
+				overflow-y: auto;
+				top: 35px;
+				margin-bottom: 0;
+				@include screen("xs") {
+					top: 38px;
+				}
+			}
+		}
+	}
+}

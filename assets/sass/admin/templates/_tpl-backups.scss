@@ -1,0 +1,1772 @@
+// ============================================== //
+// ================ SNAPSHOT 3.0 ================ //
+// ============================================== //
+// ======== by Leighton Sapir (WPMU DEV) ======== //
+// ============================================== //
+
+// Widget: Get Started
+.wpmud #container.wps-page-backups .get-started-box {
+	.wpmud-box-content {
+		p {
+			text-align: center;
+		}
+	}
+}
+
+// Widget: Get Started (Add Key)
+.wpmud #container.wps-page-backups .wps-widget-getkey {
+	.wpmud-box-content {
+		p {
+			text-align: center;
+		}
+		.wps-getkey-box {
+			max-width: 600px;
+			display: block;
+			margin: 0 auto 30px;
+		}
+	}
+}
+
+.wpmud #container.wps-page-backups .wpmud-box-content.wps-aws-sdk-incompatible {
+	opacity: 0.5;
+	background-color: #f1f1f1;
+	a.disabled {
+		background-color: #17A8E3!important;
+		color: #FFF!important;
+		text-shadow: none!important;
+	}
+}
+
+// Widget: Backups Status
+.wpmud #container.wps-page-backups .wps-widget-backups_status {
+	margin-bottom: 29px;
+	.wpmud-box-content {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		padding: 15px 15px 0;
+		.wps-backups-summary {
+			flex: 1;
+			position: relative;
+			padding: 0 15px;
+			h1 {
+				color: $color--steel;
+				font: 700 26px/36px $font--alt;
+				text-align: center;
+				@include screen("small") {
+					font: 700 32px/40px $font--alt;
+					text-align: left;
+				}
+			}
+			h5 {
+				margin: -2px 0 0;
+				color: $color--taupegray;
+				text-align: center;
+				@include screen("small") {
+					text-align: left;
+				}
+			}
+			.storage-svg {
+				height: 53px;
+				display: block;
+				position: relative;
+				margin: 0 auto;
+				border-radius: 50%;
+
+				circle {
+					stroke: #E5E5E5;
+					stroke-width: 10px;
+					stroke-dashoffset: 138;
+					transition: stroke-dashoffset 1s linear;
+				}
+			}
+			circle.storage-cake {
+				stroke: #14485F;
+				transform: rotate(-90deg) translateX(-32px) translateY(-1.5px);
+			}
+			//.wps-backups-summary-align {}
+			.wps-summary-details {
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: column;
+				align-items: center;
+				position: relative;
+				.wps-summary-percentage {
+					flex: 1;
+					margin-bottom: 10px;
+					@include screen("medium") {
+						flex: 0 53px;
+						margin-right: 20px;
+						margin-bottom: 0;
+					}
+				}
+				.wps-summar-text {
+					flex: 1;
+				}
+				@include screen("medium") {
+					flex-direction: row;
+				}
+			}
+			@include screen("small") {
+				margin-top: -20px;
+			}
+		}
+		.wps-backups-details {
+			flex: 1;
+			padding: 0 15px;
+			table {
+				width: 100%;
+				margin: 0 0 16px auto;
+				tbody {
+					@include screen("small") {
+						display: table-row-group;
+					}
+				}
+				tbody tr {
+					display: flex;
+					flex-direction: column;
+					border-bottom: 1px solid $color--whitelilac;
+					th, td {
+						@include screen("small") {
+							display: table-cell;
+							padding: 16px 0 13px;
+							border-top: 0;
+							border-bottom: 1px solid $color--whitelilac;
+						}
+					}
+					th {
+						position: relative;
+						padding-bottom: 0;
+						color: $color--mineshaft;
+						font: 700 13px/30px $font--alt;
+						letter-spacing: -0.25px;
+						text-transform: uppercase;
+						.i-check {
+							width: 20px;
+							height: 20px;
+							display: inline-block;
+							position: relative;
+							top: -2px;
+							margin-left: 10px;
+							border-radius: 20px;
+							background: $color--cerulean;
+							color: $color--white;
+							font-size: 8px;
+							line-height: 20px;
+							text-align: center;
+							&:before {
+								position: relative;
+								top: 1px;
+							}
+							@include screen("xs") {
+								display: block;
+								position: absolute;
+								top: 14px;
+								right: 0;
+								margin-left: 0;
+							}
+							@include screen("small") {
+								top: 20px;
+							}
+						}
+						@include screen("xs") {
+							flex: 0 130px;
+						}
+						@include screen("small") {
+							width: 130px;
+							padding-bottom: 8px;
+						}
+					}
+					td {
+						padding-top: 0;
+						color: $color--darkgray;
+						font: 400 18px/30px $font--alt;
+						letter-spacing: -0.25px;
+						span {
+							margin: 0;
+							display: block;
+							color: $color--taupegray;
+							font: 400 13px/22px $font;
+							letter-spacing: -0.15px;
+						}
+						.button.button-small {
+							position: relative;
+							top: -1px;
+							padding: 6px 14px 4px;
+							letter-spacing: -0.15px;
+							text-align: center;
+						}
+						.wps-backups-schedule-summary {
+							display: inline-block;
+							margin-right: 20px;
+						}
+						#wps-managed-backups-configure {
+							display: none;
+							@include screen("small") {
+								display: inline-block;
+							}
+						}
+						@include screen("small") {
+							padding-top: 10px;
+							text-align: right;
+						}
+						a.disabled {
+							border-color: #e6e6e6!important;
+							background-color: #e6e6e6!important;
+						}
+					}
+					&:first-child {
+						align-items: center;
+						flex-direction: column-reverse;
+						padding: 20px 0 30px;
+						border-bottom: 0;
+						th, td {
+							padding: 0;
+							@include screen("small") {
+								padding: 7px 0 4px;
+							}
+						}
+						th {
+							flex: 1;
+							color: $color--taupegray;
+							font: 400 13px/22px $font;
+							letter-spacing: -0.15px;
+							text-transform: capitalize;
+							@include screen("small") {
+								color: $color--mineshaft;
+								font: 700 13px/30px $font--alt;
+								letter-spacing: -0.25px;
+								text-transform: uppercase;
+							}
+						}
+						td {
+							color: $color--mineshaft;
+							font: 700 15px/30px $font--alt;
+							letter-spacing: -0.15px;
+							span {
+								display: inline;
+								margin: 0;
+								color: $color--mineshaft;
+								font: 700 15px/30px $font--alt;
+								letter-spacing: -0.15px;
+								@include screen("small") {
+									display: block;
+									color: $color--taupegray;
+									font: 400 13px/22px $font;
+									letter-spacing: -0.15px;
+								}
+							}
+							@include screen("small") {
+								color: $color--darkgray;
+								font: 400 18px/30px $font--alt;
+								text-align: right;
+								letter-spacing: -0.25px;
+							}
+						}
+						@include screen("small") {
+							padding: 0;
+						}
+					}
+					&:last-child {
+						border-bottom: 0;
+						th, td {
+							@include screen("small") {
+								border-bottom: 0;
+							}
+						}
+					}
+					@include screen("xs") {
+						flex-direction: row;
+						justify-content: space-between;
+					}
+					@include screen("small") {
+						display: table-row;
+						border-bottom: 0;
+					}
+				}
+				@include screen("small") {
+					display: table;
+				}
+			}
+			@include screen("small") {
+				flex: 0 430px;
+			}
+		}
+		@include screen("small") {
+			flex-direction: row;
+			align-items: center;
+		}
+	}
+}
+
+// Widget: Backups Status
+.wpmud #container.wps-page-backups .wps-widget-hosting-backups-status {
+	margin-bottom: 29px;
+	.wpmud-box-content {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		padding: 15px;
+		.wps-hosting-backups-summary {
+			flex: 1;
+			position: relative;
+			padding: 0 15px;
+			transform-style: preserve-3d;
+			text-align: center;
+			p {
+				max-width: 147px;
+    			margin: 5px auto;
+				color: $color--taupegray;
+				font-size: 13px;
+				line-height: 22px;
+			}
+			.wps-hosting-backups-summary-align {
+				position: relative;
+				@include screen('medium') {
+					position: absolute;
+					top: 50%;
+					right: 15px;
+					left: 15px;
+					//margin-top: -11px;
+					transform: translateY(-50%);
+				}
+			}
+			@include screen('medium') {
+				flex: 0 210px;
+				padding: 0 15px 0 0;
+			}
+			@include screen('medium') {
+				flex: 0 324px;
+				padding: 0 15px;
+				margin-bottom: 15px;
+			}
+		}
+		.wps-hosting-backups-details {
+			flex: 1;
+			padding: 0 15px;
+			table {
+				tbody tr td,
+				tbody tr th {
+					border-top: 0;
+					@include screen('medium') {
+						padding: 16px 0 10px;
+						border-bottom: 1px solid $color--whitelilac;
+					}
+				}
+				tbody tr th {
+					position: relative;
+					padding-bottom: 0;
+					color: $color--mineshaft;
+					font: 700 13px/30px $font;
+					letter-spacing: -0.25px;
+					text-transform: capitalize;
+					text-align: center;
+					@include screen('medium') {
+						width: 180px;
+						padding-bottom: 16px;
+						text-align: left;
+					}
+				}
+				tbody tr td {
+					padding-top: 0;
+					color: #666666;
+					font: 400 18px/30px $font--alt;
+					letter-spacing: -0.25px;
+					text-align: center;
+					.button.button-small {
+						position: relative;
+						letter-spacing: -0.15px;
+						text-align: center;
+					}
+					span {
+						margin: -5px 0 0 0;
+						display: block;
+						color: $color--taupegray;
+						font: 400 13px/22px $font;
+						letter-spacing: -0.15px;
+					}
+					@include screen('medium') {
+						padding-top: 10px;
+						text-align: right;
+					}
+				}
+				tbody tr:last-child th,
+				tbody tr:last-child td {
+					border-bottom: 0;
+				}
+				@include screen('medium') {
+					max-width: 370px;
+					margin: 0 0 16px auto;
+				}
+			}
+			.wps-hosting-backups-last-backup {
+				.wps-hosting-spinner {
+					@include screen('medium') {
+						float: right;
+						padding-left: 20px;
+					}
+					&:before {
+						content: " ";
+						width: 18px;
+						height: 18px;
+						display: inline-block;
+						position: relative;
+						top: 5px;
+						border: 2px solid #AAAAAA;
+						border-bottom-color: #666666;
+						border-radius: 100%;
+						background: 0 0;
+						-webkit-box-sizing: border-box;
+						box-sizing: border-box;
+						-webkit-animation: spinner .75s 0s linear infinite;
+						animation: spinner .75s 0s linear infinite;
+					}
+				}
+			}
+			a.disabled {
+				border-color: #e6e6e6!important;
+				background-color: #e6e6e6!important;
+			}
+		}
+		&:before {
+			content: " ";
+			width: 128px;
+			flex: 0 128px;
+			align-self: center;
+			margin-bottom: 20px;
+			background: url("../img/sprite.png") no-repeat transparent;
+			background-image: url("../img/sprite.svg"), none;
+			background-position: -410px -335px;
+			@include screen('medium') {
+				height: 151px;
+				flex: 0 213px;
+				align-self: flex-end;
+				margin-bottom: 0;
+				background-position: -16px -355px;
+			}
+			@include screen('medium') {
+				flex: 0 156px;
+				margin-left: 30px;
+				height: 131px;
+				background: url(../img/snapshot-hero1.svg),none;
+				background-repeat: no-repeat;
+			}
+		}
+		@include screen('medium') {
+			flex-direction: row;
+			padding: 15px 15px 0;
+		}
+	}
+}
+
+// Widget: Dashboard Backups
+.wpmud #container.wps-page-dashboard .wps-widget-backups {
+	.wps-hosting-backups-count {
+		margin: -4px 0 -5px 10px;
+		padding: 4px 0;
+		line-height: inherit;
+	}
+	p#wps-hosting-backups-disclaimer {
+		margin: 0 5px 15px;
+		text-align: left;
+	}
+	.wps-hosting-backup-list {
+			.msc-name {
+				width: 215px;
+			}
+		.my-backups-content {
+			#my-hosting-backups-table {
+				th {
+					text-transform: none;
+				}
+
+				td {
+					padding: 15px 0 14px;
+				}
+
+				td.msc-name {
+					font: 400 15px/22px $font;
+					color: #666666;
+					
+					.wps-icon {
+						position: relative;
+						top: 3px;
+						margin-right: 10px;
+						display: inline-block;
+						&:before {
+							font-size: 20px;
+							color: #888;
+						}
+					}
+					
+					.i-snapshot-error {
+						&:before {
+							color: #FF6D6D;
+						}
+					}
+					
+					.wps-tooltip {
+						display: inline-block;
+					}
+				}
+				
+				.msc-type {
+					width: auto;
+					padding: 15px 10px 0;
+					border: 1px solid #EAEAEA;
+					border-radius: 5px;
+					background: #F9F9F9;
+					border-bottom: 0;
+					border-bottom-right-radius: 0;
+					border-bottom-left-radius: 0;				
+					&:before {
+						content: attr(data-title);
+						display: inline;
+						color: $color--mineshaft;
+						font-weight: 500;
+						margin-right: 6px;
+						@include screen("medium") {
+							display: none;
+						}
+					}
+					@include screen('medium') {
+						padding: 15px 0 14px;
+						border: none;
+						border-top: 1px solid #E6E6E6;
+						border-radius: 0;
+						background: #ffffff;
+					}
+				}
+				.msc-context {
+					padding: 15px 10px 10px;
+					border: 1px solid #EAEAEA;
+					border-radius: 5px;
+					background: #F9F9F9;
+					border-top: 0;
+					border-top-left-radius: 0;
+					border-top-right-radius: 0;				
+					&:before {
+						content: attr(data-title);
+						display: inline;
+						color: #333333;
+						font-weight: 500;
+						margin-right: 6px;
+						@include screen("medium") {
+							display: none;
+						}
+					}
+					@include screen('medium') {
+						width: auto;
+						padding: 15px 0 14px;
+						border: none;
+						border-top: 1px solid #E6E6E6;
+						border-radius: 0;
+						background: #ffffff;
+					}
+				}
+			}
+		}
+	}
+
+	.wps-free .wps-hosting-backup-list {
+		margin-bottom: 30px;
+	}
+
+	.wps-hosting-backup-list-loader {
+		height: 250px;
+		background-color: #FAFAFA;
+		.wpmud-box-gray {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			padding: 0;
+			.wps-hosting-spinner {
+				position: relative;
+				margin-top: 100px;
+				margin-bottom: 0;
+				&:before {
+					content: " ";
+					width: 18px;
+					height: 18px;
+					display: inline-block;
+					position: relative;
+					top: 1px;
+					left: 1px;
+					margin-right: 10px;
+					border: 2px solid #AAAAAA;
+					border-bottom-color: #666666;
+					border-radius: 100%;
+					background: 0 0;
+					-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+					-webkit-animation: spinner .75s 0s linear infinite;
+					animation: spinner .75s 0s linear infinite;
+				}
+			}
+			h3 {
+				color: #AAAAAA;
+				font: 400 15px/20px $font;
+				text-transform: capitalize;
+				letter-spacing: -0.15px;
+				margin-bottom: 53px;
+			}
+		}
+	}
+	.wps-free .wps-hosting-backup-list-loader {
+		margin-bottom: 30px;
+	}
+	.wps-notice-wrapper.wps-backup-list-ajax-error {
+		text-align: center;
+		margin: 30px 5px 0;
+		.wps-auth-message {
+			&:before {
+				font-size: 5px;
+				line-height: 12px;
+				width: 12px;
+				height: 12px;
+				top: 20px;
+				padding-left: 0px;
+			}
+		}
+		p {
+			font-size: 13px;
+			line-height: 25px;
+			text-align: left;
+			letter-spacing: -0.22px;
+			padding-left: 21px;
+		}
+		a.wps-reload-backup-listing {
+			margin: 20px auto 30px;
+			padding: 6px 20px 4px;
+		}
+	}
+	.sui-component-snapshot .sui-tooltip.sui-tooltip-constrained:after {
+		min-width: 260px;
+	}
+}
+
+// Widget: Available Backups
+.wpmud #container.wps-page-backups .wps-widget-available_backups {
+	.wpmud-box-title {
+		a.disabled {
+			border-color: #e6e6e6!important;
+			background-color: #e6e6e6!important;
+		}
+	}
+	.wpmud-box-content {
+		.wps-image + p {
+			text-align: center;
+			+ p {
+				text-align: center;
+			}
+		}
+	}
+	.wpmud-box-gray {
+		padding: 20px 20px 15px;
+		text-align: center;
+		.filter-label,
+		.select-container,
+		.button {
+			display: inline-block;
+		}
+		.filter-label {
+			position: relative;
+			vertical-align: text-bottom;
+			top: -2px;
+			margin-right: 17px;
+			margin-left: 5px;
+			line-height: 44px;
+		}
+		.select-container {
+			.select-list-container .list-value {
+				min-width: 143px;
+			}
+		}
+		.button {
+			width: 86px;
+			margin-top: 1px !important;
+			margin-left: 6px !important;
+			padding: 9px 10px 7px !important;
+			text-align: center;
+		}
+	}
+	.my-backups {
+		//margin-top: 30px;
+		.my-backups-filter {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			.msf-left, .msf-right {
+				flex: 1;
+			}
+			.msf-left {
+				.select-container {
+					float: left;
+					margin-right: 4px;
+					.select-list-container .list-value {
+						min-width: 113px;
+					}
+				}
+				.button {
+					padding: 9px 20px 7px !important;
+					text-align: center;
+				}
+			}
+			.msf-right {
+				text-align: right;
+				.results-count {
+					position: relative;
+					top: 1px;
+				}
+				&.pagination-enabled {
+					.results-count {
+						top: 5px;
+						margin-right: 17px;
+					}
+				}
+			}
+			ul.my-snapshot-pagination {
+				display: inline-flex;
+				margin: 0;
+				border: 1px solid $color--whitelilac;
+				border-radius: 4px;
+				li.pagination-number {
+					flex: 1;
+					margin: 0;
+					border-right: 1px solid $color--whitelilac;
+					display: inline-block;
+					list-style: none;
+					text-align: center;
+					a, span {
+						min-width: 49px;
+						display: block;
+						padding: 2px 8px 6px;
+						font: 400 15px/30px $font;
+						letter-spacing: 0;
+						text-align: center;
+					}
+					a {
+						color: $color--cerulean;
+						&:hover {
+							color: $color--bluegreen;
+						}
+					}
+					span {
+						color: $color--steel;
+					}
+					&:last-child {
+						border-right: 0;
+					}
+				}
+				li.pagination-number {
+					&.prev a, &.next a {
+						min-width: 49px;
+						padding: 0 8px;
+						&.disabled {
+							opacity: 1;
+							pointer-events: none;
+							color: $color--silver;
+						}
+						&:before {
+							position: relative;
+							top: 4px;
+							font-size: 11px;
+							line-height: 20px;
+							font-family: $font--icon;
+						}
+					}
+					&.prev a:before {
+						content: $i-arrow-left;
+					}
+					&.next a:before {
+						content: $i-arrow-right;
+					}
+				}
+			}
+		}
+		.my-backups-content {
+			table {
+				margin: 0;
+				thead tr th,
+				tbody tr td {
+					&.msc-name {
+						//padding-left: 10px;
+					}
+					&.msc-size {
+						@include screen("medium") {
+							width: 100px;
+							padding-left: 10px;
+						}
+					}
+					&.msc-date {
+						@include screen("medium") {
+							width: 170px;
+							padding-left: 7px;
+						}
+					}
+					&.msc-info {
+						@include screen("medium") {
+							width: 140px;
+						}
+					}
+				}
+				thead {
+					tr th {
+						padding: 13px 0 1px;
+						.wps-input--checkbox {
+							position: relative;
+							top: 2px;
+						}
+					}
+				}
+				tbody {
+					tr {
+						padding-bottom: 20px;
+						border-bottom: 1px solid $color--whitelilac;
+						&:last-child {
+							padding-bottom: 0;
+							border-bottom: 0;
+						}
+						@include screen("medium") {
+							padding-bottom: 0;
+							border-bottom: 0;
+						}
+					}
+					tr td {
+						.wps-input--checkbox {
+							position: relative;
+							top: -2px;
+						}
+						.wps-typecon {
+							margin: 0;
+						}
+						&.msc-check-local {
+							position: relative;
+							transform-style: preserve-3d;
+							.wps-input--checkbox {
+								position: absolute;
+								top: 50%;
+								left: 0;
+								transform: translateY(-50%);
+							}
+						}
+						&.msc-name {
+							margin-bottom: 10px;
+							@include screen("medium") {
+								margin-bottom: 0;
+							}
+						}
+						&.msc-name table {
+							display: table;
+							vertical-align: middle;
+							margin: 0;
+							tbody tr {
+								display: flex;
+								flex-wrap: wrap;
+								flex-direction: row;
+								align-items: center;
+								@include screen("medium") {
+									display: table-row;
+								}
+							}
+							tbody tr td {
+								padding: 0;
+								border: 0;
+							}
+							.msc-name-type {
+								width: 20px;
+								display: none;
+								@include screen("xs") {
+									display: block;
+								}
+								@include screen("medium") {
+									display: table-cell;
+								}
+
+								.wps-icon {
+									font-size: 22px;
+									vertical-align: -1px;
+								}
+
+								.upload-error {
+									$upload-error-color: #FF6D6D;
+
+									&.i-cloud-upload:before {
+										color: $upload-error-color;
+										content: $i-cloud-error;
+									}
+
+									&.automated {
+										background: $upload-error-color;
+										-webkit-mask: url("../img/sprite.svg");
+										-webkit-mask-position: -1000px -443px;
+										mask: url("../img/sprite.svg");
+										mask-position: -1000px -443px;
+									}
+								}
+							}
+							.msc-name-desc {
+								margin-left: 10px;
+								@include screen("medium") {
+									margin-left: 0;
+									padding-left: 10px;
+								}
+							}
+						}
+						&.msc-size,
+						&.msc-date {
+							padding-right: 10px;
+							padding-left: 10px;
+							border: 1px solid $color--lily;
+							border-radius: 5px;
+							background: $color--hint;
+							&:before {
+								content: attr(data-title);
+								display: inline;
+								color: $color--mineshaft;
+								font-weight: 500;
+								margin-right: 6px;
+								@include screen("medium") {
+									display: none;
+								}
+							}
+							@include screen("medium") {
+								border: 0;
+								border-top: 1px solid $color--whitelilac;
+								border-radius: 0;
+								background: $color--white;
+							}
+						}
+						&.msc-size {
+							padding-bottom: 0;
+							border-bottom: 0;
+							border-bottom-right-radius: 0;
+							border-bottom-left-radius: 0;
+							@include screen("medium") {
+								padding-right: 0;
+								padding-bottom: 8px;
+							}
+						}
+						&.msc-date {
+							padding-bottom: 10px;
+							border-top: 0;
+							border-top-left-radius: 0;
+							border-top-right-radius: 0;
+							@include screen("medium") {
+								padding-right: 0;
+								padding-bottom: 8px;
+								padding-left: 7px;
+								border-top: 1px solid $color--whitelilac;
+							}
+						}
+						&.msc-info {
+							@include screen("medium") {
+								text-align: right;
+							}
+							position: relative;
+							overflow: initial;
+							.wps-menu .wps-menu-dots {
+								background: $color--concrete;
+								.wps-menu-dot {
+									background: $color--mineshaft;
+									@include screen("medium") {
+										background: $color--taupegray;
+									}
+								}
+								&:hover, &:focus, &:active {
+									.wps-menu-dot {
+										@include screen("medium") {
+											background: $color--mineshaft;
+										}
+									}
+									@include screen("medium") {
+										background: $color--concrete;
+									}
+								}
+								@include screen("medium") {
+									background: $color--white;
+								}
+							}
+							.wps-menu.open .wps-menu-dots {
+								background: $color--concrete;
+								.wps-menu-dot {
+									background: $color--mineshaft;
+								}
+							}
+						}
+					}
+					tr:last-child td {
+						padding-bottom: 0;
+						border-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+	.wps-available-backups-header {
+		flex: 1;
+	}
+	.wps-no-available-backups-header {
+		flex: 1;
+		display: none;
+	}
+	.wps-no-hosting-managed-backups {
+		display: none;
+		flex-direction: column;
+		height: 100%;
+		&:before {
+			content: "";
+			height: 128px;
+			background-image: url(../img/snapshot-circle-smile.svg);
+			background-position: 50% 0;
+			background-repeat: no-repeat;
+			background-size: 17.5%;
+		}
+		p {
+			margin-top: 30px;
+			text-align: center;
+		}
+		input[type="submit"] {
+			width: auto;
+			font-size: 15px;
+			margin: 0 auto;
+			padding: 10px 20px;
+			margin-top: 25px;
+			line-height: 20px;
+		}
+	}
+	.wps-new-hosting-backup-state {
+		margin: 0;
+		.wps-progress-loader {
+			display: none;
+			div.wps-notice {
+				margin-bottom: 30px;
+				&:before {
+					font-size: 7px;
+					line-height: 17px;
+					width: 16px;
+					height: 16px;
+					top: 21px;
+				}
+			}
+		}
+		div.wps-notice, div.wps-auth-message {
+			display: flex;
+			p {
+				width: 100%;
+				padding-left: 26px;
+			}
+		}
+		.wps-progress-error, .wps-progress-success, .wps-restore-progress-success, .wps-restore-progress-error {
+				display: none;
+			.wps-auth-message {
+				color: #333333;
+				font-family: Roboto;
+				font-size: 15px;
+				letter-spacing: -0.15px;
+				line-height: 30px;
+				padding-left: 56px;
+				margin-bottom: 30px;
+				p {
+					padding-left: 0;
+					padding-right: 10px;
+				}
+				&:before {
+					font-size: 6px;
+					line-height: 17px;
+					width: 16px;
+					height: 16px;
+					top: 21px;
+				}
+			}
+		}
+		i.wps-dismiss-notice {
+			color: #888;
+			cursor: pointer;
+			font-size: 10px;
+			font-weight: 700;
+			font-style: normal;
+			line-height: 30px;
+			padding: 0 3px 0 23px;
+		}
+
+	}
+	.wps-hosting-backup-list-loader {
+		height: 334px;
+		background-color: #FAFAFA;
+		margin-top: 30px;
+		.wpmud-box-gray {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			padding: 0;
+			.wps-hosting-spinner {
+				position: relative;
+				margin-top: 100px;
+				margin-bottom: 0;
+				&:before {
+					content: " ";
+					width: 18px;
+					height: 18px;
+					display: inline-block;
+					position: relative;
+					top: 1px;
+					left: 1px;
+					margin-right: 10px;
+					border: 2px solid #AAAAAA;
+					border-bottom-color: #666666;
+					border-radius: 100%;
+					background: 0 0;
+					-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+					-webkit-animation: spinner .75s 0s linear infinite;
+					animation: spinner .75s 0s linear infinite;
+				}
+			}
+			&:after {
+				content: "";
+				flex: 1;
+				height: 126px;
+				background-position: 42% 0;
+				background-repeat: no-repeat;
+				background-size: 90%;
+				background-image: url(../img/snapshot-hero-flying.svg);
+				transform: scaleX(-1);
+				opacity: 0.22;
+			}
+			h3 {
+				color: #AAAAAA;
+				font: 400 15px/20px $font;
+				text-transform: capitalize;
+				letter-spacing: -0.15px;
+				margin-bottom: 53px;
+			}
+		}
+	}
+
+	.wps-backup-list-ajax-error {
+		margin: 30px 0;
+		padding: 30px;
+		text-align: center;
+		.wps-auth-message.error::before {
+			font-size: 5px;
+			line-height: 12px;
+			width: 12px;
+			height: 12px;
+			top: 20px;
+			padding-left: 0px;
+		}
+		p {
+			font-size: 13px;
+			line-height: 25px;
+			text-align: left;
+			letter-spacing: -0.22px;
+			padding-left: 21px;
+		}
+		a.wps-reload-backup-listing {
+			margin: 20px auto 0 !important;
+			padding: 6px 20px 4px !important;
+			width: auto !important;
+		}
+	}
+
+	.wps-my-hosting-backups {
+		display: none;
+		#my-hosting-backups-table {
+			table-layout: auto;
+			.hosting-backups-headers {
+				display:none;			
+				@include screen('medium') {
+					display: table-row;
+				}
+			}
+			thead {
+				display: table;
+				width:100%;			
+				@include screen('medium') {
+					display: table-header-group;
+				}
+			}
+			.msc-name {
+				width: 255px;
+			}
+			.msc-type {
+				width: auto;
+				padding: 15px 10px 0;
+				border: 1px solid #EAEAEA;
+				border-radius: 5px;
+				background: #F9F9F9;
+				border-bottom: 0;
+				border-bottom-right-radius: 0;
+				border-bottom-left-radius: 0;				
+				&:before {
+					content: attr(data-title);
+					display: inline;
+					color: $color--mineshaft;
+					font-weight: 500;
+					margin-right: 6px;
+					@include screen("medium") {
+						display: none;
+					}
+				}
+				@include screen('medium') {
+					width: 130px;
+					padding: 15px 0 14px;
+					border: none;
+					border-top: 1px solid #E6E6E6;
+					border-radius: 0;
+					background: #ffffff;
+				}
+			}
+			.msc-context {
+				padding: 15px 10px 10px;
+				border: 1px solid #EAEAEA;
+				border-radius: 5px;
+				background: #F9F9F9;
+				border-top: 0;
+				border-top-left-radius: 0;
+				border-top-right-radius: 0;				
+				&:before {
+					content: attr(data-title);
+					display: inline;
+					color: #333333;
+					font-weight: 500;
+					margin-right: 6px;
+					@include screen("medium") {
+						display: none;
+					}
+				}
+				@include screen('medium') {
+					width: auto;
+					padding: 15px 0 14px;
+					border: none;
+					border-top: 1px solid #E6E6E6;
+					border-radius: 0;
+					background: #ffffff;
+				}
+			}
+			thead tr th {
+				padding: 0 0 2px;
+				text-transform: capitalize;
+    			font: 700 13px/30px "Roboto",Arial,sans-serif;
+			}
+			&.in-progress-row {
+				tr:first-child td{
+					@include screen('medium') {
+						border-top: none;
+					}
+				}
+			}
+			tr:last-child{
+				td {
+					@include screen('medium') {
+						padding-bottom: 0;
+					}
+				}
+			}
+			td {
+				padding: 15px 0 14px;
+			}
+			td.msc-name {
+				a {
+					color: #17A8E3;
+					font-size: 15px;
+					line-height: 20px;
+				}
+			}
+			tr.wps-progress-loader-row, tr.wps-restore-progress-loader-row {
+				display: none;
+				td {
+					padding: 0;
+				}
+				.wpmud-box-gray {
+					padding: 15px;
+					.wps-spinner {
+						color: #888;
+						text-align: left;
+						&:before {
+							top: 6px;
+						}
+					}
+				}
+			}
+			tr.wps-restore-progress-loader-row td .wpmud-box-gray .wps-spinner {
+				color: #666666;
+			}
+		}
+		
+		a.button {
+			float: right;
+		}
+
+		.wps-typecon {
+			font-size: 20px;
+			display: inline-block;
+			line-height: 20px;
+			margin-right: 10px;
+			vertical-align: middle;
+		}
+		
+		.i-snapshot-error {
+			&:before {
+				color: #FF6D6D;
+			}
+		}
+		
+		.wps-icon {
+			position: relative;
+			top: 3px;
+			margin-right: 10px;
+			display: inline-block;
+			&:before {
+				font-size: 20px;
+			}
+		}
+		
+		.wps-tooltip {
+			display: inline-block;
+		}
+	}
+}
+
+.wpmud #container.wps-page-backups {
+	#wps-snapshot-key-notice {
+		display: none;
+		&.show {
+			display: block;
+		}
+
+		#get-snapshot-key-notice {
+			margin-bottom: 35px;
+
+			&.disabled-get-key {
+				background-color: #E6E6E6;
+				color: #AAAAAA;
+				cursor: default;
+
+				&:hover, &:focus {
+					background-color: #E6E6E6!important;
+					color: #AAAAAA!important;
+				}
+			}
+		}
+
+		.wps-auth-message.error {
+			margin-bottom: 30px;
+
+			&.hidden {
+				display: none;
+			}
+			p {
+				text-align: left;
+				letter-spacing: -0.25px;
+    			color: #666666;
+			}
+		}
+
+		#secret-key-notice {
+			max-width: 550px;
+			margin: 0 auto;
+			overflow: auto;
+
+			input[type="text"] {
+				float: left;
+				max-width: 440px;
+				border-radius: 3px 0 0 3px;
+			}
+
+			button {
+				border-radius: 0 4px 4px 0;
+			}
+
+			label {
+				color: #888888;
+				font-size: 13px;
+				letter-spacing: -0.25px;
+				line-height: 30px;
+				padding: 0;
+			}
+
+			#secret-key-form {
+				position: relative;
+
+				button {
+					position: absolute;
+					min-width: 109px;
+					right: 1px;
+				}
+			}
+
+			&.wps-processing {
+				input[type="text"], button {
+					pointer-events: none;
+				}
+				input[type="text"] {
+					background-color: $color--dysphoria;
+					color: $color--silver;
+				}
+				.button {
+					background-color: $color--whitelilac !important;
+					text-indent: -9999px;
+					&:before {
+						content: " ";
+						width: 18px;
+						height: 18px;
+						display: inline-block;
+						position: absolute;
+						top: 11px;
+						left: 45px;
+						border: 2px solid $color--silver;
+						border-bottom-color: $color--steel;
+						border-radius: 100%;
+						background: 0 0;
+						box-sizing: border-box;
+						animation: spinner .75s 0s linear infinite;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Menu: Backups + Settings
+.wpmud #container.wps-page-backups .wps-managed-backups-tabs {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+
+	.wps-managed-backups-menu {
+		flex: 1;
+		margin-bottom: 30px;
+
+		input[type="radio"] {
+			display: none;
+
+			+ label {
+				width: 100%;
+				display: none;
+				margin: 0 0 6px;
+				padding: 0 15px;
+				border-radius: 15px;
+				color: $color--steel;
+				font: 400 15px/30px $font;
+				letter-spacing: -0.25px;
+				transition: .2s ease-in;
+
+				&:hover {
+					background: $color--whitelilac;
+					color: $color--mineshaft;
+				}
+
+				&:active, &:focus {
+					background: $color--whitelilac;
+					color: $color--mineshaft;
+					font-weight: 500;
+				}
+
+				&:last-child {
+					margin: 0;
+				}
+
+				@include screen("small") {
+					display: block;
+				}
+			}
+
+			&:checked + label {
+				background: $color--whitelilac;
+				color: $color--mineshaft;
+				font-weight: 500;
+			}
+		}
+
+		.select-container {
+			display: block;
+			@include screen("small") {
+				display: none;
+			}
+		}
+		@include screen("small") {
+			flex: 0 170px;
+			margin-right: 30px;
+			margin-bottom: 0;
+			padding-top: 25px;
+		}
+	}
+
+	.wps-managed-backups-pages {
+		flex: 1;
+
+		.row-box {
+			padding: 0 30px;
+		}
+
+		.row-inner {
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: row;
+			margin-bottom: 25px;
+			padding-bottom: 30px;
+			border-bottom: 1px solid $color--palewhite;
+
+			.col-left {
+				flex: 0 240px;
+				margin-right: 30px;
+
+				label {
+					margin: 0;
+					padding: 0;
+					color: $color--mineshaft;
+					font: 500 15px/30px $font;
+					letter-spacing: -0.25px;
+
+					+ p {
+						margin: 0;
+					}
+				}
+			}
+
+			.col-right {
+				flex: 1;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+				border-bottom: 0;
+			}
+		}
+
+		.wps-widget-backups_settings {
+
+			.wpmud-box-content .row,
+			.wpmud-box-content .row .col-xs-12 {
+				padding: 0;
+			}
+
+			#wps-backups-settings-schedule {
+
+				.col-right {
+
+					.wps-managed-backups-toggle {
+
+						.toggle,
+						.toggle + label {
+							display: inline-block;
+						}
+
+						.toggle {
+							margin-right: 10px;
+
+							.toggle-checkbox:checked + .toggle-label {
+								background: $color--cerulean;
+							}
+						}
+
+						.toggle + label {
+							margin: 0;
+							padding: 3px 0 0;
+							color: $color--steel;
+							line-height: 20px;
+							letter-spacing: -0.25px;
+						}
+					}
+
+					.wps-managed-backups-schedule-form {
+						margin-top: 20px;
+						padding: 30px;
+						border: 1px solid $color--whitelilac;
+						border-radius: 5px;
+						background: $color--white;
+
+						label {
+							display: inline-block;
+							padding: 0;
+							margin: 0 0 4px;
+							color: $color--taupegray;
+							font: 700 12px/22px $font;
+							letter-spacing: -0.25px;
+						}
+
+						.select-container {
+							margin-bottom: 20px;
+							background: $color--alabaster;
+
+							.dropdown-handle {
+								background: $color--alabaster;
+							}
+
+							.select-list-container .list-value {
+								color: $color--mineshaft;
+								font-family: $font;
+								font-size: 15px;
+								font-weight: 400;
+								letter-spacing: -0.25px;
+							}
+
+							&:last-child {
+								margin-bottom: 0;
+							}
+						}
+					}
+				}
+			}
+
+			#wps-backups-settings-storage {
+
+				.col-right {
+
+					label, input {
+						display: inline-block;
+					}
+
+					label {
+						cursor: text;
+						color: $color--steel;
+						letter-spacing: -0.25px;
+					}
+
+					input {
+						width: 60px;
+					}
+				}
+			}
+
+			#wps-hosting-backups-settings-storage {
+				.col-right {
+					input {
+						width: 47px;
+						height: 40px;
+						font-size: 15px;
+						line-height: 20px;
+						margin-bottom: 0;
+						padding: 10px;
+						text-align: center;
+					}
+				}
+			}
+
+			#wps-hosting-backups-settings-schedule {
+				.col-right {
+					input {
+						width: 139px;
+						height: 40px;
+						font-size: 15px;
+						line-height: 20px;
+						margin-bottom: 0;
+						padding: 10px;
+						text-align: center;
+					}
+				}
+			}
+
+			#wps-backups-files-exclude {
+
+				.col-right {
+
+					.wpmud-box-gray {
+						margin-top: 20px;
+					}
+
+					textarea {
+						margin-bottom: 0;
+					}
+					label, textarea {
+						display: inline-block;
+					}
+
+					label {
+						color: $color--steel;
+						letter-spacing: -0.25px;
+					}
+				}
+			}
+
+			#wps-backups-settings-update {
+				padding: 5px 30px 0;
+				text-align: right;
+			}
+		}
+
+		.wps-menu-list a.disabled {
+			color: #bcbcbc;
+		}
+
+		.wps-managed-backup-notice {
+			display: flex;
+			margin: 0 0 30px;
+			padding: 15px 25px 15px 30px;
+			&:before {
+				font-size: 7px;
+				line-height: 17px;
+				width: 16px;
+				height: 16px;
+				top: 21px;
+			}
+			p {
+				font-size: 15px;
+				letter-spacing: -0.25px;
+				padding-left: 26px;
+			}
+			i.wps-dismiss-notice {
+				color: #888;
+				cursor: pointer;
+				font-size: 10px;
+				font-weight: 700;
+				line-height: 30px;
+				padding: 0 3px 0 23px;
+			}
+		}
+		#wps-hosting-backups-disclaimer {
+			margin-bottom: 30px;
+		}
+	}
+
+	@include screen("small") {
+		flex-direction: row;
+	}
+}
+
+.wpmud #container.wps-page-upload-backup {
+	.wps-requirements-list table.wps-table tbody {
+		tr:nth-child(2) {
+			border-bottom: none;
+		}
+
+		tr:nth-child(3),
+		tr:nth-child(4) {
+			display: none;
+		}
+	}
+
+	.wps-button-container {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 20px;
+	}
+}
+
+.wpmud #container.wps-page-builder,
+.wpmud #container.wps-page-upload-backup {
+
+	.wpmud-box-gray,
+	.warning {
+		margin-top: 20px;
+
+		&:last-of-type {
+			margin-bottom: 20px;
+		}
+	}
+
+	.wps-loading-status.wps-spinner.wps-error {
+		&:before {
+			border: 2px solid #FFB9B9;
+			border-bottom-color: #FF6D6D;
+		}
+
+		.wps-loader {
+			> span {
+				background: #FF6D6D;
+			}
+		}
+	}
+}

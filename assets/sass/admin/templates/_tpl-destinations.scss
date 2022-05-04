@@ -1,0 +1,926 @@
+// ============================================== //
+// ================ SNAPSHOT 3.0 ================ //
+// ============================================== //
+// ======== by Leighton Sapir (WPMU DEV) ======== //
+// ============================================== //
+
+.wpmud #container.wps-page-destinations {
+	.wpsd-widget-dropbox,
+	.wpsd-widget-google,
+	.wpsd-widget-amazon,
+	.wpsd-widget-sftp,
+	.wpsd-widget-local {
+		.wpmud-box-title {
+			h3 + .button.button-small {
+				width: 132px;
+				-ms-flex: 0 1 auto;
+			}
+		}
+		.wpmud-box-content {
+			table {
+				margin: 0;
+				thead tr th,
+				tbody tr td {
+					&.wps-destination-name {
+						@include screen("medium") {
+							width: 200px;
+						}
+					}
+					&.wps-destination-user,
+					&.wps-destination-client,
+					&.wps-destination-bucket {
+						padding-right: 15px;
+						padding-left: 15px;
+						@include screen("medium") {
+							width: 230px;
+							padding-right: 0;
+							padding-left: 10px;
+						}
+					}
+					&.wps-destination-dir {
+						padding-right: 15px;
+						padding-left: 15px;
+						@include screen("medium") {
+							padding-right: 0;
+							padding-left: 10px;
+						}
+					}
+					&.wps-destination-shots {
+						@include screen("medium") {
+							width: 75px;
+							padding-left: 10px;
+						}
+					}
+					&.wps-destination-config {
+						@include screen("xs") {
+							width: 96px;
+						}
+					}
+				}
+				tbody tr {
+					display: flex;
+					flex-wrap: wrap;
+					flex-direction: column;
+					position: relative;
+					padding: 20px 0;
+					border-bottom: 1px solid $color--whitelilac;
+					td {
+						font-size: 12px;
+						&.wps-destination-name {
+							min-width: 100%;
+							margin-bottom: 10px;
+							padding-right: 60px;
+							line-height: 30px;
+							@include screen("xs") {
+								padding-right: 100px;
+							}
+							@include screen("small") {
+								padding-left: 50px;
+							}
+							@include screen("medium") {
+								min-width: 1px;
+								margin-bottom: 0;
+								padding-right: 0;
+								padding-left: 0;
+								line-height: 22px;
+							}
+						}
+						&.wps-destination-user,
+						&.wps-destination-dir,
+						&.wps-destination-client,
+						&.wps-destination-bucket,
+						&.wps-destination-host {
+							border: 1px solid $color--lily;
+							border-radius: 5px;
+							background: $color--hint;
+							&:before {
+								content: attr(data-text);
+								display: inline;
+								padding-right: 6px;
+								color: $color--mineshaft;
+								font-weight: 500;
+								@include screen("medium") {
+									display: none;
+								}
+							}
+							@include screen("medium") {
+								border-top: 1px solid $color--whitelilac;
+								border-right: 0;
+								border-bottom: 0;
+								border-left: 0;
+								border-radius: 0;
+								background: $color--white;
+							}
+						}
+						&.wps-destination-user,
+						&.wps-destination-client,
+						&.wps-destination-bucket,
+						&.wps-destination-host {
+							padding-bottom: 0;
+							border-bottom: 0;
+							border-bottom-right-radius: 0;
+							border-bottom-left-radius: 0;
+							@include screen("medium") {
+								padding-bottom: 8px;
+							}
+						}
+						&.wps-destination-dir {
+							border-top: 0;
+							border-top-left-radius: 0;
+							border-top-right-radius: 0;
+							@include screen("medium") {
+								border-top: 1px solid $color--whitelilac;
+							}
+						}
+						&.wps-destination-host {
+							padding-right: 15px;
+							padding-left: 15px;
+							@include screen("medium") {
+								padding-right: 0;
+								padding-left: 0;
+							}
+						}
+						&.wps-destination-shots {
+							display: none;
+							position: absolute;
+							top: 22px;
+							left: 0;
+							a, span {
+								display: inline-block;
+								margin: 0;
+								padding: 0 17px;
+								border-radius: 13px;
+								background: $color--whitelilac;
+								color: $color--mineshaft;
+								font: 500 13px/26px $font;
+								letter-spacing: -0.25px;
+								text-align: center;
+							}
+							@include screen("small") {
+								display: block;
+							}
+							@include screen("medium") {
+								display: table-cell;
+								position: relative;
+								top: auto;
+								left: auto;
+							}
+						}
+						&.wps-destination-config {
+							position: absolute;
+							top: 19px;
+							right: 0;
+							text-align: right;
+							.button {
+								.dashicons {
+									width: 16px;
+									height: 16px;
+									display: inline-block;
+									position: relative;
+									top: -1px;
+									font-size: 16px;
+									line-height: 16px;
+									@include screen("xs") {
+										display: none;
+									}
+								}
+								.wps-destination-config-text {
+									display: none;
+									@include screen("xs") {
+										display: inline-block;
+										position: relative;
+										top: -1px;
+									}
+								}
+								@include screen("xs") {
+									width: 96px;
+								}
+							}
+							@include screen("medium") {
+								position: relative;
+								top: auto;
+								right: auto;
+							}
+						}
+						@include screen("medium") {
+							font-size: 13px;
+						}
+					}
+					&:first-child {
+						padding-top: 0;
+						td.wps-destination-shots {
+							top: 2px;
+							@include screen("medium") {
+								top: auto;
+							}
+						}
+						td.wps-destination-config {
+							top: 0;
+						}
+					}
+					&:last-child {
+						padding-bottom: 0;
+						border-bottom: 0;
+					}
+					@include screen("medium") {
+						display: table-row;
+						border-bottom: 0;
+					}
+				}
+			}
+			.inline-notice {
+				margin: 0;
+			}
+			.incomplete-warning::before {
+				content: $i-warning;
+				background: $color--yellow;
+				color: $color--milkpunch;
+				font-size: 10px;
+				line-height: 20px;
+				width: 20px;
+				height: 20px;
+				display: inline-block;
+				float: right;
+				margin-right: 1em;
+				border-radius: 50%;
+				box-sizing: border-box;
+				font-family: $font--icon;
+				text-align: center;
+			}
+		}
+	}
+	.wpsd-widget-local {
+		table {
+			tbody tr {
+				td.wps-destination-dir {
+					border-top: 1px solid $color--lily !important;
+					border-top-left-radius: 5px !important;
+					border-top-right-radius: 5px !important;
+					@include screen("medium") {
+						border-top: 1px solid $color--whitelilac !important;
+						border-top-left-radius: 0 !important;
+						border-top-right-radius: 0 !important;
+					}
+				}
+			}
+		}
+	}
+	#wps-destinations-wizard {
+		.wpmud-box-content {
+			padding-top: 22px;
+			padding-bottom: 0px;
+			.form-content {
+				padding: 0 0 30px;
+			}
+			.form-content .form-row {
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: column;
+				label {
+					cursor: text;
+					margin: 0;
+					padding: 0;
+					font: 400 15px/40px $font;
+					letter-spacing: -0.25px;
+				}
+				@include screen("medium") {
+					flex-direction: row;
+				}
+			}
+			.form-row .form-col-left {
+				flex: 1;
+				label {
+					color: $color--mineshaft;
+					font-weight: 500;
+					@include screen("medium") {
+						font-weight: 400;
+					}
+				}
+				@include screen("medium") {
+					flex: 0 190px;
+					margin-right: 20px;
+				}
+			}
+			.form-row .form-col {
+				flex: 1;
+				label {
+					color: $color--steel;
+				}
+				input[type="text"],
+				input[type="password"] {
+					max-width: 460px;
+					margin: 0;
+				}
+				.select-container {
+					max-width: 460px;
+				}
+			}
+			.form-row .validation-error {
+				border-bottom: 2px solid #ff7f83;
+			}
+			.form-row .error-text p {
+				color: #ff7f83;
+				margin-top: 3px;
+				text-align: right;
+				max-width: 460px;
+				font-size: 11px;
+				line-height: 22px;
+			}
+			.form-content #wps-destination-type,
+			.form-content #wps-destination-contype,
+			.form-content #wps-destination-name,
+			.form-content #wps-destination-dir,
+			.form-content #wps-destination-host,
+			.form-content #wps-destination-user,
+			.form-content #wps-destination-password,
+			.form-content #wps-destination-mode,
+			.form-content #wps-destination-server,
+			.form-content #wps-destination-clientid,
+			.form-content #wps-destination-secretid,
+			.form-content #wps-destination-redirect,
+			.form-content #wps-destination-auth,
+			.form-content #wps-destination-auth_extra,
+			.form-content #wps-destination-account,
+			.form-content #wps-destination-storage,
+			.form-content #wps-destination-id,
+			.form-content #wps-destination-key,
+			.form-content #wps-destination-ssl,
+			.form-content #wps-destination-region,
+			.form-content #wps-destination-bucket,
+			.form-content #wps-destination-permission {
+				padding-top: 5px;
+				border-top: 1px dotted $color--whitelilac;
+				&:first-child {
+					border-top: 0;
+				}
+				@include screen("medium") {
+					padding-top: 0;
+					border-top: 0;
+				}
+			}
+			.form-content #wps-destination-type {
+				.form-col {
+					position: relative;
+					.wps-typecon {
+						position: absolute;
+						top: 9px;
+						left: 0;
+					}
+					label {
+						padding-left: 30px;
+						line-height: 38px;
+					}
+				}
+			}
+			.form-content #wps-destination-contype {
+				margin-top: 20px;
+				.form-col-left {
+					label {
+						line-height: 42px;
+					}
+				}
+				.form-col {
+					select + p {
+						margin: 10px 0 0;
+						+ .button {
+							margin-top: 16px;
+						}
+					}
+				}
+				@include screen("medium") {
+					margin-top: 19px;
+				}
+			}
+			.form-content #wps-destination-name,
+			.form-content #wps-destination-dir {
+				margin-top: 20px;
+				.form-col-left {
+					label {
+						line-height: 42px;
+					}
+				}
+				.form-col {
+					input + p {
+						margin: 10px 0 0;
+						+ .button {
+							margin-top: 16px;
+						}
+					}
+				}
+				@include screen("medium") {
+					margin-top: 19px;
+				}
+			}
+			.form-content #wps-destination-name {
+				.form-col {
+					input[type="text"].wps-input--ghost {
+						max-width: 100%;
+						pointer-events: none;
+						border: 0;
+						padding: 11px 0 10px;
+						color: $color--mineshaft;
+						font-weight: 500;
+					}
+				}
+			}
+			.form-content #wps-destination-host {
+				margin-top: 20px;
+				.form-col-left {
+					label {
+						line-height: 42px;
+					}
+				}
+				.form-col {
+					input {
+						max-width: 460px;
+						display: inline-block;
+						+ .inbetween {
+							display: inline-block;
+							margin: 0 16px;
+							color: $color--mineshaft;
+							line-height: 40px;
+							+ input {
+								max-width: 100px;
+							}
+						}
+					}
+				}
+				@include screen("medium") {
+					margin-top: 19px;
+				}
+			}
+			.form-content #wps-destination-user,
+			.form-content #wps-destination-password,
+			.form-content #wps-destination-mode {
+				margin-top: 20px;
+				.form-col-left {
+					label {
+						line-height: 42px;
+					}
+				}
+				.form-col {
+					.wps-input--checkbox {
+						margin-top: 9px;
+						label {
+							cursor: pointer;
+						}
+						+ p {
+							margin: 5px 0 0;
+						}
+					}
+				}
+				@include screen("medium") {
+					margin-top: 19px;
+				}
+			}
+			.form-content #wps-destination-server {
+				margin-top: 20px;
+				.form-col-left {
+					label {
+						line-height: 42px;
+					}
+				}
+				.form-col {
+					input {
+						max-width: 100px;
+						+ p {
+							margin: 12px 0 0;
+						}
+					}
+					.button {
+						margin-top: 10px;
+					}
+				}
+				@include screen("medium") {
+					margin-top: 19px;
+				}
+			}
+			.form-content #wps-destination-clientid,
+			.form-content #wps-destination-secretid {
+				margin-top: 20px;
+				.form-col-left {
+					label {
+						line-height: 42px;
+					}
+				}
+				.form-col {
+					input + p {
+						margin: 10px 0 0;
+						+ .button {
+							margin-top: 16px;
+						}
+					}
+				}
+				@include screen("medium") {
+					margin-top: 19px;
+				}
+			}
+			.form-content #wps-destination-redirect {
+				margin-top: 20px;
+				.form-col-left {
+					label {
+						line-height: 42px;
+					}
+				}
+				.form-col {
+					.wps-input--copy {
+						input[type="text"] {
+							max-width: 100%;
+						}
+					}
+					input + p {
+						margin: 10px 0 0;
+						+ .button {
+							margin-top: 16px;
+						}
+					}
+				}
+				@include screen("medium") {
+					margin-top: 19px;
+				}
+			}
+			.form-content #wps-destination-auth {
+				margin-top: 20px;
+				.form-col {
+					.wps-auth-message {
+						max-width: 460px;
+						margin-top: 4px;
+						+ p {
+							max-width: 460px;
+							margin-top: 5px;
+						}
+						+ p.wps-auth-button {
+							margin-top: 18px;
+							.button {
+								width: 100%;
+								@include screen("small") {
+									width: auto;
+								}
+							}
+						}
+					}
+					.wps-label--checkbox {
+						.wps-input--checkbox {
+							label {
+								cursor: pointer;
+								line-height: 20px;
+							}
+						}
+						.wps-input--checkbox + label {
+							cursor: pointer;
+							display: inline-block;
+							margin-top: 3px;
+							line-height: 18px;
+						}
+					}
+				}
+				+ #wps-destination-token {
+					margin-top: 20px;
+					@include screen("medium") {
+						margin-top: 14px;
+					}
+				}
+				@include screen("medium") {
+					margin-top: 14px;
+				}
+			}
+			.form-content #wps-destination-auth_extra {
+				margin-top: 20px;
+				.form-col {
+					.wps-auth-message {
+						margin-top: 4px;
+						+ p {
+							margin-top: 5px;
+						}
+					}
+				}
+				@include screen("medium") {
+					margin-top: 14px;
+				}
+			}
+			.form-content #wps-destination-account {
+				margin-top: 20px;
+				table {
+					margin: 0;
+					padding: 15px;
+					border: 1px solid $color--lily;
+					border-radius: 5px;
+					background: $color--hint;
+					tbody tr th,
+					tbody tr td {
+						padding: 0;
+						border-top: 0;
+						color: $color--steel;
+						font: 400 13px/20px $font;
+						letter-spacing: -0.25px;
+						@include screen("medium") {
+							font-size: 15px;
+						}
+					}
+					tbody tr {
+						margin-bottom: 15px;
+						&:last-child {
+							margin-bottom: 0;
+						}
+						@include screen("medium") {
+							margin-bottom: 0;
+						}
+					}
+					tbody tr th {
+						width: 83px;
+						padding-right: 10px;
+						color: $color--mineshaft;
+						font-weight: 500;
+						@include screen("medium") {
+							color: $color--steel;
+							font-weight: 400;
+						}
+					}
+					@include screen("medium") {
+						margin: 10px 0 0;
+						padding: 0;
+						border: 0;
+						border-radius: 0;
+						background: $color--white;
+					}
+				}
+				@include screen("medium") {
+					margin-top: 18px;
+				}
+			}
+			.form-content #wps-destination-storage {
+				margin-top: 20px;
+				.form-col {
+					p {
+						margin-top: 4px;
+					}
+				}
+				@include screen("medium") {
+					margin-top: 21px;
+				}
+			}
+			.form-content #wps-destination-id {
+				margin-top: 20px;
+				.form-col {
+					input + p {
+						margin-top: 5px;
+					}
+				}
+				@include screen("medium") {
+					margin-top: 18px;
+				}
+			}
+			.form-content #wps-destination-key {
+				margin-top: 20px;
+				@include screen("medium") {
+					margin-top: 15px;
+				}
+			}
+			.form-content #wps-destination-ssl {
+				margin-top: 20px;
+				.form-col .wps-input--checkbox {
+					margin-top: 9px;
+					margin-right: 0;
+					input[type="checkbox"] + label {
+						cursor: pointer;
+					}
+				}
+				@include screen("medium") {
+					margin-top: 21px;
+				}
+			}
+			.form-content #wps-destination-region {
+				margin-top: 20px;
+				@include screen("medium") {
+					margin-top: 19px;
+				}
+			}
+			.form-content #wps-destination-bucket {
+				margin-top: 20px;
+				.wps-aws-bucket-align {
+					display: flex;
+					flex-direction: column;
+					.button:not(.wps-last-item) {
+						margin-top: 10px;
+						@include screen("small") {
+							margin-top: 0;
+							margin-left: 20px;
+						}
+					}
+					@include screen("small") {
+						flex-wrap: wrap;
+						flex-direction: row;
+						align-items: center;
+					}
+				}
+				@include screen("medium") {
+					margin-top: 19px;
+				}
+			}
+			.form-content #wps-destination-permission {
+				margin-top: 20px;
+				.form-col {
+					.select-container + p {
+						margin-top: 4px;
+					}
+				}
+				@include screen("medium") {
+					margin-top: 20px;
+				}
+			}
+			.form-content #wps-destination-permission {
+				margin-top: 20px;
+				@include screen("medium") {
+					margin-top: 20px;
+				}
+			}
+		}
+		.show-instructions {
+			cursor: pointer;
+		}
+		.instructions {
+			display: none;
+			color: $color--taupegray;
+			font: 400 13px/20px $font;
+			letter-spacing: -0.16px;
+		}
+		.form-footer {
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+			margin: 0;
+			padding: 30px 0;
+			border-top: 1px solid $color--whitelilac;
+			.form-col {
+				.button {
+					width: 100%;
+					@include screen("small") {
+						width: auto;
+					}
+				}
+				.button.button-outline {
+					padding: 5px 20px;
+					@include screen("xs") {
+						padding: 9px 20px 7px;
+					}
+				}
+				&:not(:first-child) {
+					margin-top: 15px;
+					@include screen("small") {
+						margin-top: 0;
+						margin-left: 15px;
+					}
+				}
+				&:nth-child(2) {
+					text-align: left;
+					@include screen("small") {
+						text-align: right;
+					}
+				}
+				&.form-col-right {
+					@include screen("small") {
+						text-align: right;
+					}
+				}
+			}
+			@include screen("small") {
+				flex-direction: row;
+				justify-content: space-between;
+			}
+		}
+	}
+	.aws-incompatible-wizard {
+		.wpmud-box-content {
+			background-color: #f8f8f8;
+			input[type="text"],
+			input[type="password"],
+			#snapshot-destination-bucket-display {
+				background-color: #f8f8f8;
+				color: #ababab;
+				font-weight: 400;
+			}
+			.select-container {
+				background-color: #f5f5f5;
+			}
+			.list-value,
+			.dropdown-handle {
+				background-color: #f5f5f5;
+				color: #ababab;
+				font-weight: 400;				
+			}
+			label,
+			i,
+			p {
+				opacity: 0.5;
+			}
+		}
+		.wps-popup-content{
+			.wpmud-box-content {
+				background-color: #ffffff;
+				label,
+				i,
+				p {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
+// Widget: Try Managed Backups
+.wpmud #container.wps-page-destinations .try-managed-backups-box {
+	.wpmud-box-content {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 30px 30px 0;
+		&:before {
+			content: " ";
+			width: 141px;
+			height: 180px;
+			flex: 0 141px;
+			align-self: flex-end;
+			background: url("../img/sprite.png") no-repeat transparent;
+			background-image: url("../img/sprite.svg"), none;
+			background-position: -389px 0;
+		}
+	}
+	.wpmud-box-content-wrap {
+		flex: 1;
+		padding-left: 29px;
+		p {
+			margin-bottom: 20px;
+			a:not(.button) {
+				position: relative;
+				top: -1px;
+				margin-left: 17px;
+				color: $color--taupegray;
+				&:hover, &:focus, &:active {
+					color: $color--steel;
+				}
+			}
+			&:last-child {
+				margin-bottom: 20px;
+				@include screen(large) {
+					margin-bottom: 30px;
+				}
+			}
+		}
+	}
+}
+
+// Widget: Dropbox
+.wpmud #container.wps-page-destinations .wpsd-widget-dropbox {
+	.wpmud-box-title {
+		h3 + .button.button-small {
+			right: auto;
+			left: 151px;
+		}
+	}
+}
+
+// Widget: Google Drive
+.wpmud #container.wps-page-destinations .wpsd-widget-google {
+	.wpmud-box-title {
+		h3 + .button.button-small {
+			right: auto;
+			left: 187px;
+		}
+	}
+}
+
+// Widget: Amazon S3
+.wpmud #container.wps-page-destinations .wpsd-widget-amazon {
+	.wpmud-box-title {
+		h3 + .button.button-small {
+			right: auto;
+			left: 166px;
+		}
+	}
+}
+
+// Widget: sFTP
+.wpmud #container.wps-page-destinations .wpsd-widget-sftp {
+	.wpmud-box-title {
+		h3 + .button.button-small {
+			right: auto;
+			left: 153px;
+		}
+	}
+}
+
+// Widget: Local
+.wpmud #container.wps-page-destinations .wpsd-widget-local {
+	.wpmud-box-title {
+		h3 + .button.button-small {
+			right: auto;
+			left: 127px;
+		}
+	}
+}
+
+// Modal: Remove Destination
+.wpmud #container.wps-page-destinations #wps-destinations-wizard .wps-popup-modal {
+	.wpmud-box-content {
+		padding-bottom: 0;
+	}
+}

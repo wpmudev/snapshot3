@@ -1,0 +1,187 @@
+// ============================================== //
+// ================ SNAPSHOT 3.0 ================ //
+// ============================================== //
+// ======== by Leighton Sapir (WPMU DEV) ======== //
+// ============================================== //
+
+.wpmud #container.wps-page-settings {
+	// Correct grid
+	#wps-settings-localdir,
+	#wps-settings--exclusions,
+	#wps-settings--error,
+	#wps-settings-backups {
+		.col-sm-3 {
+			@include screen(small) {
+				max-width: 21%;
+				flex-basis: 21%;
+			}
+		}
+		.col-md-3 {
+			@include screen(medium) {
+				max-width: 21%;
+				flex-basis: 21%;
+			}
+		}
+		.col-lg-3 {
+			@include screen(large) {
+				max-width: 21%;
+				flex-basis: 21%;
+			}
+		}
+		.col-sm-9 {
+			@include screen(small) {
+				max-width: 79%;
+				flex-basis: 79%;
+			}
+		}
+		.col-md-9 {
+			@include screen(medium) {
+				max-width: 79%;
+				flex-basis: 79%;
+			}
+		}
+		.col-lg-9 {
+			@include screen(large) {
+				max-width: 79%;
+				flex-basis: 79%;
+			}
+		}
+	}
+	// Local Directory
+	#wps-settings-localdir {
+		position: relative;
+		margin-bottom: 29px;
+		padding-bottom: 31px;
+		.wpmud-box-gray {
+			margin-top: 19px;
+			padding: 30px 29px 26px;
+			input {
+				margin-bottom: 10px;
+			}
+		}
+		&:after {
+			content: " ";
+			height: 1px;
+			display: block;
+			position: absolute;
+			right: 30px;
+			bottom: 0;
+			left: 30px;
+			background: $color--whitelilac;
+		}
+	}
+	// Global File Exclusions
+	#wps-settings--exclusions {
+		position: relative;
+		margin-bottom: 29px;
+		padding-bottom: 31px;
+		.wpmud-box-mask {
+			.label-title {
+				margin-bottom: 30px;
+			}
+			textarea {
+				margin-bottom: 10px;
+				+ p {
+					margin: 0;
+					line-height: 20px;
+				}
+			}
+		}
+		&:after {
+			content: " ";
+			height: 1px;
+			display: block;
+			position: absolute;
+			right: 30px;
+			bottom: 0;
+			left: 30px;
+			background: $color--whitelilac;
+		}
+	}
+	// Error Reporting
+	#wps-settings--error {
+		position: relative;
+		margin-bottom: 30px;
+		padding-bottom: 20px;
+		.wps-input--item {
+			margin-top: 18px;
+			margin-bottom: 10px;
+			p {
+				margin-top: 8px;
+				line-height: 22px;
+				small {
+					line-height: 22px;
+					letter-spacing: -0.25px;
+				}
+			}
+			+ .wpmud-box-gray {
+				padding: 18px 30px 19px;
+				.wps-input--item {
+					margin: 0;
+				}
+			}
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+		&:after {
+			content: " ";
+			height: 1px;
+			display: block;
+			position: absolute;
+			right: 30px;
+			bottom: 0;
+			left: 30px;
+			background: $color--whitelilac;
+		}
+	}
+	#wps-settings-backups {
+		position: relative;
+		margin-bottom: 30px;
+		padding-bottom: 28px;
+		.wpmud-box-mask {
+			.label-title {
+				margin-bottom: 30px;
+			}
+			.wps-input--item {
+				input[type="text"] {
+					+ .button {
+						@include screen("xs") {
+							min-width: 86px;
+						}
+					}
+					@include screen("xs") {
+						padding-right: 100px;
+					}
+				}
+			}
+			.wpmud-box-gray {
+				padding: 30px 29px;
+			}
+			.wpmud-box-gray + p {
+				margin-top: 10px;
+				small {
+					line-height: 22px;
+				}
+			}
+		}
+		&:after {
+			content: " ";
+			height: 1px;
+			display: block;
+			position: absolute;
+			right: 30px;
+			bottom: 0;
+			left: 30px;
+			background: $color--whitelilac;
+		}
+	}
+	// Save Changes
+	.form-button-container {
+		padding: 0;
+		text-align: right;
+		.button {
+			min-width: 148px;
+		}
+	}
+}

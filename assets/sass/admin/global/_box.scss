@@ -1,0 +1,300 @@
+// ============================================== //
+// ================ SNAPSHOT 3.0 ================ //
+// ============================================== //
+// ======== by Leighton Sapir (WPMU DEV) ======== //
+// ============================================== //
+
+.wpmud .snapshot-three .wpmud-box,
+.wpmud #container.snapshot-three .wpmud-box {
+	&.open {
+		.wpmud-box-title.can-toggle .wps-icon {
+			transform: rotate(-90deg) !important;
+		}
+	}
+}
+
+.wpmud .snapshot-three .wpmud-box .wpmud-box-content .wpmud-box-tab {
+	&.open {
+		.wpmud-box-tab-title.can-toggle .wps-icon {
+			transform: rotate(-90deg) !important;
+		}
+	}
+}
+
+.wpmud .snapshot-three .wpmud-box,
+.wpmud #container.snapshot-three .wpmud-box {
+	margin: 0 0 30px;
+	border-radius: 5px;
+	background-color: $color--white;
+	box-shadow: 0 2px 0 $color--lily;
+	.wpmud-box-title {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		align-items: center;
+		position: relative;
+		margin-bottom: -1px;
+		padding: 0 20px;
+		border-bottom: 1px solid $color--lily;
+		h3 {
+			overflow: hidden;
+			display: block;
+			flex: 1;
+			margin: 0;
+			padding-top: 22px;
+			padding-bottom: 20px;
+			color: $color--mineshaft;
+			font: 700 15px/18px $font--alt;
+			letter-spacing: -0.3px;
+			text-align: left;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			&.has-count {
+				.wps-count {
+					margin: -4px 0 -5px 10px;
+					padding: 4px 0;
+					line-height: inherit;
+				}
+			}
+			&.has-button {
+				.button-small {
+					display: inline;
+					position: relative;
+					top: 1px;
+					left: 0;
+					margin-left: 10px;
+					line-height: inherit;
+				}
+			}
+		}
+		.wps-icon {
+			flex: 0;
+			font-size: 12px;
+			color: $color--sand;
+			cursor: pointer;
+			transition: 0.25s ease;
+			&:hover {
+				color: $color--montana;
+			}
+		}
+		&.can-close,
+		&.has-button,
+		&.has-tag,
+		&.has-typecon,
+		&.has-menu {
+			position: relative;
+			z-index: 1;
+			.i-close,
+			.button,
+			.wps-tag {
+				flex: 0;
+			}
+			.i-close {
+				cursor: pointer;
+				color: $color--steel;
+				font-size: 14px;
+				&:hover {
+					color: $color--mineshaft;
+				}
+			}
+			.button-small {
+				-ms-flex: 0 1 auto;
+				&.button-outline {
+					padding: 5px 15px;
+				}
+			}
+			.wps-typecon {
+				min-width: 20px;
+				display: none;
+				flex: 0;
+				+ h3 {
+					padding-left: 0;
+					@include screen("xs") {
+						padding-left: 0;
+					}
+					@include screen("small") {
+						padding-left: 10px;
+					}
+				}
+				@include screen("small") {
+					display: block;
+				}
+			}
+			.wps-menu {
+				position: absolute;
+				top: 16px;
+				right: 26px;
+			}
+		}
+		&.has-button,
+		&.has-tag,
+		&.has-typecon,
+		&.has-menu {
+			flex-direction: column;
+			align-items: flex-start;
+			h3 {
+				margin-right: 0;
+				&:last-child {
+					margin-right: 0;
+				}
+				@include screen("xs") {
+					margin-right: 20px;
+				}
+				@include screen("medium") {
+					margin-right: 30px;
+				}
+			}
+			.button {
+				margin-bottom: 10px;
+				@include screen("xs") {
+					margin-right: 10px;
+					margin-bottom: 0;
+				}
+				&:last-child {
+					margin-bottom: 22px;
+					@include screen("xs") {
+						margin-right: 0;
+						margin-bottom: 0;
+					}
+				}
+			}
+			@include screen("xs") {
+				flex-direction: row;
+				align-items: center;
+			}
+		}
+		@include screen("medium") {
+			padding: 0 30px;
+		}
+	}
+	.wpmud-box-content {
+		padding: 20px 0;
+		.wpmud-box-mask {
+			@include screen("medium") {
+				padding-left: 11px;
+			}
+		}
+		@include screen("medium") {
+			padding: 30px 0;
+		}
+	}
+}
+
+.wpmud .snapshot-three .wpmud-box-gray {
+	padding: 15px;
+	border-radius: 5px;
+	background: $color--hint;
+	@include screen("small") {
+		padding: 20px;
+	}
+}
+
+.wpmud .snapshot-three .wpmud-box .wpmud-box-content .wpmud-box-tab {
+	.wpmud-box-tab-title {
+		width: 100%;
+		display: inline-flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		align-items: center;
+		position: relative;
+		margin-bottom: -1px;
+		padding: 0 20px;
+		border-bottom: 1px solid $color--lily;
+		h3 {
+			overflow: hidden;
+			display: block;
+			flex: 1;
+			margin: 0;
+			padding-top: 24px;
+			padding-bottom: 27px;
+			color: $color--mineshaft;
+			font: 700 14px/20px $font--alt;
+			letter-spacing: 0px;
+			text-align: left;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			.wps-tag {
+				margin-left: 10px;
+			}
+		}
+		.wps-icon {
+			flex: 0;
+			font-size: 10px;
+			color: $color--sand;
+			cursor: pointer;
+			transition: 0.25s ease;
+			&:hover {
+				color: $color--montana;
+			}
+			&.disabled {
+				opacity: 0.7;
+				pointer-events: none;
+				&:hover {
+					color: $color--sand;
+				}
+			}
+		}
+		&.can-toggle,
+		&.can-close,
+		&.has-button,
+		&.has-tag,
+		&.has-typecon {
+			position: relative;
+			h3 {
+				margin-right: 30px;
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+			.i-close, .button, .wps-tag {
+				flex: 0;
+			}
+			.i-close {
+				min-width: 10px;
+				cursor: pointer;
+				color: $color--steel;
+				font-size: 14px;
+				&:hover {
+					color: $color--mineshaft;
+				}
+			}
+			.button {
+				margin-right: 10px;
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+			.button-small {
+				&.button-outline {
+					padding: 5px 15px;
+				}
+			}
+			.wps-tag {
+				top: 21px;
+				right: 60px;
+			}
+			.wps-typecon {
+				min-width: 20px;
+				flex: 0;
+				+ h3 {
+					padding-left: 10px;
+				}
+			}
+		}
+		@include screen("medium") {
+			padding: 0 30px;
+		}
+	}
+	.wpmud-box-tab-content {
+		padding: 20px 0;
+		.wpmud-box-mask {
+			@include screen("medium") {
+				padding-left: 11px;
+			}
+		}
+		@include screen("medium") {
+			padding: 30px 0;
+		}
+	}
+}

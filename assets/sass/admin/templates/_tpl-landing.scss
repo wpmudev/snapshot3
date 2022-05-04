@@ -1,0 +1,38 @@
+// ============================================== //
+// ================ SNAPSHOT 3.0 ================ //
+// ============================================== //
+// ======== by Leighton Sapir (WPMU DEV) ======== //
+// ============================================== //
+
+.snapshot-pro-dashboard-welcome {
+	.wpmud-box {
+		padding-top: 50px;
+		> h2, > p {
+			padding: 0 20px;
+		}
+		> p {
+			margin: 6px 0 10px;
+			text-align: center;
+		}
+		&:after {
+			content: " ";
+			width: 252px;
+			height: 184px;
+			display: block;
+			margin: 30px auto 0;
+			@extend %sprite;
+			background-position: 0 0;
+		}
+	}
+	.row {
+		padding: 0 15px;
+		@include screen(large) {
+			padding: 0 25px;
+		}
+		.col-lg-4 {
+			@include screen(large) {
+				padding: 0 25px;
+			}
+		}
+	}
+}

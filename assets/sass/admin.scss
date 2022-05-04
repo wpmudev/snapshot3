@@ -1,0 +1,33 @@
+// ============================================== //
+// ================ SNAPSHOT 3.0 ================ //
+// ============================================== //
+// ======== by Leighton Sapir (WPMU DEV) ======== //
+// ============================================== //
+
+@import "admin/_shared-ui.scss";
+@import "admin/_helpers.scss";
+@import "admin/_global.scss";
+
+// Common Files
+@import "admin/global/_grid.scss";
+@import "admin/global/_box.scss";
+@import "admin/global/_card.scss";
+@import "admin/global/_icons.scss";
+@import "admin/global/_images.scss";
+@import "admin/global/_typography.scss";
+@import "admin/global/_formelements.scss";
+@import "admin/global/_buttons.scss";
+@import "admin/global/_table.scss";
+@import "admin/global/_menu.scss";
+@import "admin/global/_modals.scss";
+
+// Templates
+@import "admin/templates/_tpl-landing.scss";
+@import "admin/templates/_tpl-dashboard.scss";
+@import "admin/templates/_tpl-snapshots.scss";
+@import "admin/templates/_tpl-wizard.scss";
+@import "admin/templates/_tpl-destinations.scss";
+@import "admin/templates/_tpl-backups.scss";
+@import "admin/templates/_tpl-builder.scss";
+@import "admin/templates/_tpl-import.scss";
+@import "admin/templates/_tpl-settings.scss";

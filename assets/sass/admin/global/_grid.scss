@@ -1,0 +1,336 @@
+// ============================================== //
+// ================ SNAPSHOT 3.0 ================ //
+// ============================================== //
+// ======== by Leighton Sapir (WPMU DEV) ======== //
+// ============================================== //
+
+.snapshot-three .row {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	padding: 0 10px;
+	@include screen('small') {
+		padding: 0 15px;
+	}
+	// Nor minimum, nor maximum screen size
+	.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6,
+	.col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+		flex: 0 0 auto;
+		-webkit-box-flex: 0;
+		padding: 0 10px;
+	}
+	.col-xs-1 {
+		max-width: 8.33333333%;
+		flex-basis: 8.33333333%;
+	}
+	.col-xs-2 {
+		max-width: 16.66666667%;
+		flex-basis: 16.66666667%;
+	}
+	.col-xs-3 {
+		max-width: 25%;
+		flex-basis: 25%;
+	}
+	.col-xs-4 {
+		max-width: 33.33333333%;
+		flex-basis: 33.33333333%;
+	}
+	.col-xs-5 {
+		max-width: 41.66666667%;
+		flex-basis: 41.66666667%;
+	}
+	.col-xs-6 {
+		max-width: 50%;
+		flex-basis: 50%;
+	}
+	.col-xs-7 {
+		max-width: 58.33333333%;
+		flex-basis: 58.33333333%;
+	}
+	.col-xs-8 {
+		max-width: 66.66666667%;
+		flex-basis: 66.66666667%;
+	}
+	.col-xs-9 {
+		max-width: 75%;
+		flex-basis: 75%;
+	}
+	.col-xs-10 {
+		max-width: 83.33333333%;
+		flex-basis: 83.33333333%;
+	}
+	.col-xs-11 {
+		max-width: 91.66666667%;
+		flex-basis: 91.66666667%;
+	}
+	.col-xs-12 {
+		max-width: 100%;
+		flex-basis: 100%;
+	}
+	.col-xs-hidden {
+		@media (max-width: 767px) {
+			display: none;
+		}
+	}
+	// Small Screens
+	// Screens larger than 768px
+	.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6,
+	.col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+		@include screen('small') {
+			flex: 0 0 auto;
+			-webkit-box-flex: 0;
+			padding: 0 15px;
+		}
+	}
+	.col-sm-1 {
+		@include screen('small') {
+			max-width: 8.33333333%;
+			flex-basis: 8.33333333%;
+		}
+	}
+	.col-sm-2 {
+		@include screen('small') {
+			max-width: 16.66666667%;
+			flex-basis: 16.66666667%;
+		}
+	}
+	.col-sm-3 {
+		@include screen('small') {
+			max-width: 25%;
+			flex-basis: 25%;
+		}
+	}
+	.col-sm-4 {
+		@include screen('small') {
+			max-width: 33.33333333%;
+			flex-basis: 33.33333333%;
+		}
+	}
+	.col-sm-5 {
+		@include screen('small') {
+			max-width: 41.66666667%;
+			flex-basis: 41.66666667%;
+		}
+	}
+	.col-sm-6 {
+		@include screen('small') {
+			max-width: 50%;
+			flex-basis: 50%;
+		}
+	}
+	.col-sm-7 {
+		@include screen('small') {
+			max-width: 58.33333333%;
+			flex-basis: 58.33333333%;
+		}
+	}
+	.col-sm-8 {
+		@include screen('small') {
+			max-width: 66.66666667%;
+			flex-basis: 66.66666667%;
+		}
+	}
+	.col-sm-9 {
+		@include screen('small') {
+			max-width: 75%;
+			flex-basis: 75%;
+		}
+	}
+	.col-sm-10 {
+		@include screen('small') {
+			max-width: 83.33333333%;
+			flex-basis: 83.33333333%;
+		}
+	}
+	.col-sm-11 {
+		@include screen('small') {
+			max-width: 91.66666667%;
+			flex-basis: 91.66666667%;
+		}
+	}
+	.col-sm-12 {
+		@include screen('small') {
+			max-width: 100%;
+			flex-basis: 100%;
+		}
+	}
+	.col-sm-hidden {
+		@media (min-width: 48em) and (max-width: 1023px) {
+			display: none;
+		}
+	}
+	// Medium Screens
+	// Screens larger than 1024px
+	.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6,
+	.col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+		@include screen('medium') {
+			flex: 0 0 auto;
+			-webkit-box-flex: 0;
+			padding: 0 15px;
+		}
+	}
+	.col-md-1 {
+		@include screen('medium') {
+			max-width: 8.33333333%;
+			flex-basis: 8.33333333%;
+		}
+	}
+	.col-md-2 {
+		@include screen('medium') {
+			max-width: 16.66666667%;
+			flex-basis: 16.66666667%;
+		}
+	}
+	.col-md-3 {
+		@include screen('medium') {
+			max-width: 25%;
+			flex-basis: 25%;
+		}
+	}
+	.col-md-4 {
+		@include screen('medium') {
+			max-width: 33.33333333%;
+			flex-basis: 33.33333333%;
+		}
+	}
+	.col-md-5 {
+		@include screen('medium') {
+			max-width: 41.66666667%;
+			flex-basis: 41.66666667%;
+		}
+	}
+	.col-md-6 {
+		@include screen('medium') {
+			max-width: 50%;
+			flex-basis: 50%;
+		}
+	}
+	.col-md-7 {
+		@include screen('medium') {
+			max-width: 58.33333333%;
+			flex-basis: 58.33333333%;
+		}
+	}
+	.col-md-8 {
+		@include screen('medium') {
+			max-width: 66.66666667%;
+			flex-basis: 66.66666667%;
+		}
+	}
+	.col-md-9 {
+		@include screen('medium') {
+			max-width: 75%;
+			flex-basis: 75%;
+		}
+	}
+	.col-md-10 {
+		@include screen('medium') {
+			max-width: 83.33333333%;
+			flex-basis: 83.33333333%;
+		}
+	}
+	.col-md-11 {
+		@include screen('medium') {
+			max-width: 91.66666667%;
+			flex-basis: 91.66666667%;
+		}
+	}
+	.col-md-12 {
+		@include screen('medium') {
+			max-width: 100%;
+			flex-basis: 100%;
+		}
+	}
+	.col-md-hidden {
+		@media (min-width: 64em) and (max-width: 1199px) {
+			display: none;
+		}
+	}
+	// Large Screens
+	// Screens larger than 1200px
+	.col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6,
+	.col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+		@include screen('large') {
+			flex: 0 0 auto;
+			-webkit-box-flex: 0;
+			padding: 0 15px;
+		}
+	}
+	.col-lg-1 {
+		@include screen('large') {
+			max-width: 8.33333333%;
+			flex-basis: 8.33333333%;
+		}
+	}
+	.col-lg-2 {
+		@include screen('large') {
+			max-width: 16.66666667%;
+			flex-basis: 16.66666667%;
+		}
+	}
+	.col-lg-3 {
+		@include screen('large') {
+			max-width: 25%;
+			flex-basis: 25%;
+		}
+	}
+	.col-lg-4 {
+		@include screen('large') {
+			max-width: 33.33333333%;
+			flex-basis: 33.33333333%;
+		}
+	}
+	.col-lg-5 {
+		@include screen('large') {
+			max-width: 41.66666667%;
+			flex-basis: 41.66666667%;
+		}
+	}
+	.col-lg-6 {
+		@include screen('large') {
+			max-width: 50%;
+			flex-basis: 50%;
+		}
+	}
+	.col-lg-7 {
+		@include screen('large') {
+			max-width: 58.33333333%;
+			flex-basis: 58.33333333%;
+		}
+	}
+	.col-lg-8 {
+		@include screen('large') {
+			max-width: 66.66666667%;
+			flex-basis: 66.66666667%;
+		}
+	}
+	.col-lg-9 {
+		@include screen('large') {
+			max-width: 75%;
+			flex-basis: 75%;
+		}
+	}
+	.col-lg-10 {
+		@include screen('large') {
+			max-width: 83.33333333%;
+			flex-basis: 83.33333333%;
+		}
+	}
+	.col-lg-11 {
+		@include screen('large') {
+			max-width: 91.66666667%;
+			flex-basis: 91.66666667%;
+		}
+	}
+	.col-lg-12 {
+		@include screen('large') {
+			max-width: 100%;
+			flex-basis: 100%;
+		}
+	}
+	.col-lg-hidden {
+		@include screen('large') {
+			display: none;
+		}
+	}
+}

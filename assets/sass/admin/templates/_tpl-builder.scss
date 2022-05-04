@@ -1,0 +1,226 @@
+// ============================================== //
+// ================ SNAPSHOT 3.0 ================ //
+// ============================================== //
+// ======== by Leighton Sapir (WPMU DEV) ======== //
+// ============================================== //
+
+// Widget: Create Snapshot
+.wpmud #container.wps-page-builder .wpmud-box {
+	.wpmud-box-title {
+		.wps-title-progress,
+		.wps-title-result {
+			width: 100%;
+			flex: 1;
+			&.hidden {
+				display: none;
+			}
+		}
+		.wps-title-progress {
+			display: inline-flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+			align-items: flex-start;
+			h3 {
+				flex: 1;
+			}
+			h3 + .button {
+				flex: 0;
+				-ms-flex: 0 1 auto;
+				margin-bottom: 22px !important;
+				@include screen("xs") {
+					margin-bottom: 0 !important;
+				}
+			}
+			@include screen("xs") {
+				flex-direction: row;
+				align-items: center;
+			}
+		}
+		.wps-title-result {
+			h3 {
+				width: 100%;
+				display: block;
+				margin: 0;
+			}
+		}
+	}
+	.wpmud-box-gray {
+		margin-top: 31px;
+	}
+	.wpmud-box-gray + p {
+		margin: 28px 0 0;
+		.button.button-outline {
+			padding: 9px 18px 7px !important;
+		}
+	}
+	#wps-log {
+		margin-top: 35px;
+		h4 {
+			text-align: left;
+		}
+		table {
+			margin: 8px 0 0;
+			thead tr th,
+			tbody tr td {
+				&.wps-log-process {
+					@include screen("medium") {
+						padding-right: 20px;
+					}
+				}
+				&.wps-log-progress {
+					@include screen("medium") {
+						width: 356px;
+						padding-left: 3px;
+					}
+				}
+			}
+			thead {
+				tr th {
+					padding: 13px 0 4px;
+				}
+			}
+			tbody {
+				tr {
+					border-top: 1px solid $color--whitelilac;
+					td {
+						padding: 15px 0;
+						font: 400 15px/30px $font;
+						letter-spacing: -0.25px;
+						&.wps-log-process {
+							padding-bottom: 3px;
+							@include screen("medium") {
+								padding-bottom: 15px;
+							}
+						}
+						&.wps-log-progress {
+							padding-top: 0;
+							@include screen("medium") {
+								padding-top: 15px;
+							}
+						}
+					}
+					&:first-child {
+						border-top: 0;
+					}
+					@include screen("medium") {
+						border-top: 0;
+					}
+				}
+				tr .wps-log-progress {
+					position: relative;
+					.wps-log-progress-elements {
+						display: flex;
+						flex-wrap: wrap;
+						flex-direction: row;
+						align-items: center;
+						justify-content: space-between;
+						.button {
+							flex: 0;
+							margin-right: 8px;
+							text-align: center;
+							@include screen("xs") {
+								margin-right: 12px;
+							}
+						}
+						.wps-spinner {
+							width: 18px;
+							height: 18px;
+							margin-right: 8px;
+							padding: 0;
+							&:before {
+								top: 0;
+								left: 0;
+								margin-right: 0;
+							}
+							@include screen("xs") {
+								margin-right: 12px;
+							}
+							@include screen("medium") {
+								margin-right: 0;
+							}
+						}
+						.wps-loading-status {
+							//max-width: 245px;
+							display: flex;
+							flex: 1;
+							flex-wrap: wrap;
+							flex-direction: row;
+							align-items: center;
+						}
+						.wps-loading-number {
+							flex: 0 35px;
+							margin-right: 6px;
+							color: $color--mineshaft;
+							font: 700 15px/30px $font--alt;
+							letter-spacing: -0.25px;
+							@include screen("medium") {
+								margin-right: 11px;
+								text-align: right;
+							}
+							&.done {
+								color:#1ABC9C;
+							}
+						}
+						.wps-loading-bar .wps-loader {
+							margin-top: 0;
+						}
+						&.done {
+							//justify-content: flex-end;
+						}
+					}
+				}
+			}
+		}
+	}
+	#wps-log-resume {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		margin: 15px 0 0;
+		padding: 15px;
+		.log-memory,
+		.log-usage,
+		.log-peak {
+			display: inline-block;
+			width: 22%;
+			p {
+				display: inline-block;
+				color: $color--mineshaft;
+				font-size: 13px;
+				line-height: 25px;
+				.number {
+					padding-left: 6px;
+				}
+				@include screen("small") {
+					font-size: 15px;
+					line-height: 30px;
+				}
+			}
+		}
+		.log-memory {
+			@include screen("small") {
+				padding-right: 5.1%;
+			}
+		}
+		.log-usage {
+			@include screen("small") {
+				padding-right: 4.6%;
+			}
+		}
+		@include screen("small") {
+			flex-direction: row;
+			padding: 15px 30px;
+		}
+	}
+	.wps-auth-message.error + p {
+		margin-top: 31px;
+		.button:not(.button-outline) {
+			float: right;
+		}
+	}
+	.wps-auth-message.success + .wpmud-box-gray + p {
+		@include screen("xs") {
+			text-align: right;
+		}
+	}
+}

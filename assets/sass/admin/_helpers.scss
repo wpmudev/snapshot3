@@ -1,0 +1,127 @@
+// ============================================== //
+// ================ SNAPSHOT 3.0 ================ //
+// ============================================== //
+// ======== by Leighton Sapir (WPMU DEV) ======== //
+// ============================================== //
+
+// Font Helpers
+$font: "Roboto", Arial, sans-serif;
+$font--alt: "Roboto Condensed", "Roboto", Arial, sans-serif;
+$font--icon: 'snapshot';
+
+// Color Helpers
+$color--white: #FFFFFF;
+$color--alabaster: #FAFAFA;
+$color--hint: #F9F9F9;
+$color--dysphoria: #F8F8F8;
+$color--concrete: #F2F2F2;
+$color--lily: #EAEAEA;
+$color--palewhite: #EEEEEE;
+$color--pale: #EDEFED;
+$color--whitelilac: #E6E6E6;
+$color--athens: #DDDDDD;
+$color--iron: #CCCCCC;
+$color--silver: #C0C0C0;
+$color--sand: #BBBBBB;
+$color--lightgray: #AAAAAA;
+$color--taupegray: #888888;
+$color--montana: #777771;
+$color--steel: #666666;
+$color--darkgray: #555555;
+$color--mineshaft: #333333;
+$color--seagreen: #1ABC9C;
+$color--niagara: #20A289;
+$color--pattensblue: #E1F6FF;
+$color--lightblue: #A9E0EC;
+$color--cerulean: #17A8E3;
+$color--bluegreen: #1492C5;
+$color--atom: #415153;
+$color--carousel: #FFE5E9;
+$color--hummingbird: #D1F1EA;
+$color--milkpunch: #FFF5D5;
+$color--yellow: #FECF2F;
+$color--warning: #FF6D6D;
+
+// Icon Helpers
+$i-check: "\e900";
+$i-arrow-left: "\e901";
+$i-arrow-right: "\e902";
+$i-close: "\e903";
+$i-warning: "\e904";
+$i-cloud-upload: "\e905";
+$i-cloud-error: "\e906";
+$i-cloud-automate: "\2d9";
+$i-cloud-hosting: "\ce";
+$i-snapshot: "\fb01";
+
+// Sprite Helpers
+%sprite {
+	background: url("../img/sprite.png") no-repeat transparent;
+	background-image: url("../img/sprite.svg"), none;
+}
+
+// CSS3 Loader Keyframes
+@keyframes spinner {
+	0% { transform: rotate(0deg); }
+	50% { transform: rotate(180deg); }
+	100% { transform: rotate(360deg); }
+}
+@-webkit-keyframes spinner {
+	0% { transform: rotate(0deg); }
+	50% { transform: rotate(180deg); }
+	100% { transform: rotate(360deg); }
+}
+
+// CSS3 Percentage Keyframes
+@keyframes offset {
+	100% {
+		stroke-dashoffset: 0;
+	}
+}
+@-webkit-keyframes offset {
+	100% {
+		stroke-dashoffset: 0;
+	}
+}
+
+// CSS3 Percentage Configs
+$configs: (
+	chart-backups: (
+		svgSize: 53px,
+		percentage: 16,
+		strokeWidth: 10px,
+		backgroundColor: $color--whitelilac,
+		foregroundColor: $color--cerulean,
+		completeColor: $color--warning,
+		duration: 3s,
+		animationDelay: 1s
+	)
+);
+
+// Global Breakpoints
+@mixin screen($breakpoint) {
+	// Screens larger than
+	@if $breakpoint == "xs" {
+		@media (min-width: 30em) {
+			@content;
+		}
+	}
+	// Screens larger than 768px
+	@if $breakpoint == "small" {
+		@media (min-width: 48em) {
+			@content;
+		}
+	}
+	// Screens larger than 1024px
+	@else if $breakpoint == "medium" {
+		@media (min-width: 64em) {
+			@content;
+		}
+	}
+	// Screens larger than 1200px
+	@else if $breakpoint == "large" {
+		@media (min-width: 75em) {
+			@content;
+		}
+	}
+}

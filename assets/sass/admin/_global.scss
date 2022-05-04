@@ -1,0 +1,544 @@
+// ============================================== //
+// ================ SNAPSHOT 3.0 ================ //
+// ============================================== //
+// ======== by Leighton Sapir (WPMU DEV) ======== //
+// ============================================== //
+
+.wpmud {
+	background: #F4F4F4;
+	#screen-meta-links {
+		display: none;
+	}
+	#header {
+		max-width: 1020px;
+		position: relative;
+		margin: 28px 0 0;
+		padding: 0 30px 0 10px;
+		h1 {
+			margin: 0;
+			color: $color--mineshaft;
+			letter-spacing: -0.2px;
+		}
+		p {
+			overflow: hidden;
+			float: none;
+			display: block;
+			color: $color--darkgray;
+			letter-spacing: -0.15px;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			span {
+				color: $color--montana;
+			}
+			@include screen('small') {
+				text-align: right;
+			}
+		}
+		div.actions {
+			width: 100%;
+			float: none;
+			display: block;
+			@include screen('small') {
+				width: auto;
+				max-width: 300px;
+				position: absolute;
+				top: 6px;
+				right: 0;
+			}
+		}
+		div.toggle {
+			height: 21px;
+			input + .toggle-label {
+				vertical-align: top;
+				&:after {
+					vertical-align: inherit;
+				}
+			}
+		}
+	}
+	#container {
+		max-width: 980px;
+		margin-right: 30px;
+		margin-left: 10px;
+	}
+	.footer {
+		width: 100%;
+		max-width: 1020px;
+		margin-top: 62px;
+		padding: 0 30px 0 10px;
+		color: $color--iron;
+		font: 400 13px/22px $font;
+		letter-spacing: -0.25px;
+		text-align: center;
+	}
+	form > div {
+		padding-top: 0;
+	}
+	#wps-snapshot-key {
+		z-index: 999;
+	}
+	.fancy-date-time {
+		color: $color--darkgray;
+		font: 400 20px/27px $font--alt;
+		text-align: right;
+		letter-spacing: 0.1px;
+		span {
+			margin: 0;
+			display: block;
+			color: $color--taupegray;
+			font: 400 13px/22px $font;
+			letter-spacing: -0.15px;
+		}
+	}
+}
+
+.wpmud .snapshot-three {
+	.hidden {
+		display: none;
+	}
+	// Count Number
+	.wps-count {
+		width: 40px;
+		display: inline-block;
+		border-radius: 13px;
+		background: $color--whitelilac;
+		color: $color--mineshaft;
+		font: 500 13px/26px $font;
+		letter-spacing: -0.25px;
+		text-align: center;
+	}
+	// Tags or Labels
+	.wps-tag {
+		padding: 6px 15px 4px;
+		border: 2px solid $color--mineshaft;
+		border-radius: 15px;
+		color: $color--mineshaft;
+		font: 500 12px/16px $font;
+		letter-spacing: -0.25px;
+		text-transform: uppercase;
+		text-align: center;
+		&.wps-tag--blue {
+			border-color: $color--cerulean;
+			color: $color--cerulean;
+		}
+		&.wps-tag--green {
+			border-color: $color--seagreen;
+			color: $color--seagreen;
+		}
+	}
+	// Loading Spinner
+	.wps-spinner {
+		position: relative;
+		padding-left: 30px;
+		&:before {
+			content: " ";
+			width: 18px;
+			height: 18px;
+			display: inline-block;
+			position: absolute;
+			top: 1px;
+			left: 1px;
+			margin-right: 10px;
+			border: 2px solid $color--lightblue;
+			border-bottom-color: $color--cerulean;
+			border-radius: 100%;
+			background: 0 0;
+			box-sizing: border-box;
+			animation: spinner .75s 0s linear infinite;
+		}
+	}
+	// Loading Bar
+	.wps-loader {
+		width: 100%;
+		height: 10px;
+		overflow-x: hidden;
+		position: relative;
+		display: block;
+		border-radius: 5px;
+		background: $color--whitelilac;
+		> span {
+			height: 10px;
+			overflow: hidden;
+			display: block;
+			position: relative;
+			border-radius: 5px 0 0 5px;
+			background: $color--cerulean;
+		}
+		&.done > span {
+			background: $color--seagreen;
+			border-radius: 5px;
+		}
+	}
+	// Loading Status
+	.wps-loading-status {
+		display: flex;
+		flex-wrap: wrap;
+		&.wps-spinner {
+			padding-left: 40px;
+			&:before {
+				left: 11px;
+			}
+		}
+		.wps-loading-number {
+			flex: 0 30px;
+			margin: 0;
+			color: $color--mineshaft;
+			font: 700 13px/30px $font--alt;
+			line-height: inherit;
+			letter-spacing: -0.25px;
+		}
+		.wps-loading-bar {
+			flex: 1;
+			.wps-loader {
+				margin-top: 5px;
+			}
+		}
+	}
+	// Notice
+	.wps-notice {
+		width: 100%;
+		display: block;
+		position: relative;
+		margin: 0;
+		padding: 15px;
+		border: 0;
+		border-radius: 5px;
+		box-shadow: none;
+		background: $color--pattensblue;
+		transform-style: preserve-3d;
+		&:before {
+			content: $i-warning;
+			width: 20px;
+			height: 20px;
+			display: block;
+			position: absolute;
+			top: 17px;
+			left: 15px;
+			padding: 0;
+			border-radius: 50%;
+			background: $color--cerulean;
+			box-sizing: border-box;
+			transform: rotate(180deg);
+			color: $color--pattensblue;
+			font-family: $font--icon;
+			font-size: 10px;
+			line-height: 20px;
+			text-align: center;
+			@include screen("small") {
+				top: 20px;
+				left: 30px;
+			}
+		}
+		p {
+			margin: 0;
+			padding: 0 0 0 30px;
+			color: $color--mineshaft;
+			font: 400 13px/24px $font;
+			letter-spacing: -0.4px;
+			a, a:hover {
+				border-bottom: 1px solid $color--mineshaft;
+				color: $color--mineshaft;
+				font-weight: 500;
+			}
+			@include screen("small") {
+				font-size: 15px;
+				line-height: 30px;
+			}
+		}
+		@include screen("small") {
+			padding: 15px 30px;
+		}
+	}
+	// Success Message
+	&.wps-success-message,&.wps-error-message,&.wps-warning-message {
+		max-width: 980px;
+		opacity: 0;
+		visibility: hidden;
+		display: block;
+		position: absolute;
+		z-index: 99999;
+		top: 0;
+		right: 10px;
+		left: 0;
+		text-align: center;
+		cursor: pointer;
+		transform: translateY(-20px);
+		transition: opacity 0.2s ease, transform 0.3s linear;
+		.wps-success-message-wrap,.wps-error-message-wrap,.wps-warning-message-wrap {
+			width: 100%;
+			max-width: 600px;
+			display: inline-block;
+			position: relative;
+			padding: 10px;
+			border-radius: 0 0 5px 5px;
+			background: $color--hummingbird;
+			box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+			p {
+				margin: 0;
+				padding-left: 30px;
+				color: $color--mineshaft;
+				text-align: left;
+				a, a:hover, a:active, a:visited, a:focus {
+					border-bottom: 1px solid $color--mineshaft;
+					color: $color--mineshaft;
+					font-weight: 500;
+				}
+			}
+			&:before {
+				content: $i-check;
+				width: 20px;
+				height: 20px;
+				position: absolute;
+				top: 50%;
+				left: 10px;
+				border-radius: 50%;
+				background: $color--seagreen;
+				color: $color--hummingbird;
+				font: 400 8px/22px $font--icon;
+				transform: translateY(-50%);
+				@include screen('small') {
+					left: 30px;
+				}
+			}
+			@include screen('small') {
+				width: auto;
+				min-width: 600px;
+				padding: 15px 30px;
+			}
+		}
+		&.show {
+			opacity: 1;
+			visibility: visible;
+			transform: translateY(0);
+		}
+		@include screen('small') {
+			width: 100%;
+			margin-right: 30px;
+			margin-left: 10px;
+		}
+	}
+	&.wps-success-message.wps-hosting-backups-message,&.wps-error-message.wps-hosting-backups-message,&.wps-warning-message.wps-hosting-backups-message {
+		cursor: inherit;
+		p {
+			max-width: 660px;
+			line-height: 30px;
+		}
+		i.wps-dismiss-notice {
+			float: right;
+			color: #888;
+			cursor: pointer;
+			font-size: 10px;
+			font-weight: 700;
+			font-style: normal;
+			line-height: 30px;
+			padding: 0 3px 0 23px;
+		}
+		.wps-success-message-wrap, .wps-error-message-wrap {
+			&:before {
+				font-size: 6px;
+				line-height: 16px;
+				width: 16px;
+				height: 16px;
+				top: 29px;
+			}
+		}
+	}
+	&.wps-hosting-backups-message {
+		.wps-success-message-wrap, .wps-error-message-wrap {
+			max-width: 100%;
+		}
+	}
+
+	//error message
+	&.wps-error-message {
+		.wps-error-message-wrap {
+			background: $color--carousel;
+			&:before {
+				content: $i-warning;
+				background: $color--warning;
+				color: $color--carousel;
+			}
+			span{
+				display:block;
+			}
+		}
+	}
+
+	//warning message
+	&.wps-warning-message {
+		.wps-warning-message-wrap {
+			background: $color--milkpunch;
+			&:before {
+				content: $i-warning;
+				background: $color--yellow;
+				color: $color--milkpunch;
+			}
+		}
+	}
+
+	&.snapshot-aws-combat {
+		margin-right: 30px;
+		margin-left: 10px;
+		margin-top: 25px;
+		max-width: 980px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		p {
+			font-size: 13px;
+			line-height: 21px;
+			padding: 5px;
+		}
+		button {
+			padding: 0!important;
+			background: transparent!important;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			margin-right: 17px!important;
+		}
+	}
+
+	// Authentication Message
+	.wps-auth-message {
+		width: 100%;
+		display: block;
+		position: relative;
+		margin: 0;
+		padding: 15px;
+		border: 0;
+		border-radius: 5px;
+		box-shadow: none;
+		transform-style: preserve-3d;
+		&.warning, &.error, &.success {
+			&:before {
+				width: 20px;
+				height: 20px;
+				display: block;
+				position: absolute;
+				top: 20px;
+				left: 15px;
+				padding: 0 0 0 1px;
+				border-radius: 50%;
+				box-sizing: border-box;
+				font-family: $font--icon;
+				text-align: center;
+				@include screen("small") {
+					left: 30px;
+				}
+			}
+		}
+		&.warning {
+			background: $color--milkpunch;
+			&:before {
+				content: $i-warning;
+				background: $color--yellow;
+				color: $color--milkpunch;
+				font-size: 10px;
+				line-height: 20px;
+			}
+		}
+		&.error {
+			background: $color--carousel;
+			&:before {
+				content: $i-warning;
+				background: $color--warning;
+				color: $color--carousel;
+				font-size: 10px;
+				line-height: 20px;
+			}
+		}
+		&.success {
+			background: $color--hummingbird;
+			&:before {
+				content: $i-check;
+				background: $color--seagreen;
+				color: $color--hummingbird;
+				font-size: 8px;
+			}
+		}
+		p {
+			margin: 0;
+			padding: 0 0 0 30px;
+			color: $color--mineshaft;
+			font: 400 13px/24px $font;
+			letter-spacing: -0.4px;
+			a, a:hover {
+				border-bottom: 1px solid $color--mineshaft;
+				color: $color--mineshaft;
+				font-weight: 500;
+			}
+			@include screen("small") {
+				font-size: 15px;
+				line-height: 30px;
+			}
+		}
+		@include screen("small") {
+			padding: 15px 30px;
+		}
+	}
+
+	p.wps-auth-message {
+		padding-left: 43px;
+
+		&::before {
+			left: 15px !important;
+			top: 15px !important;
+		}
+	}
+
+	// CSS3 Percentage
+	$pi: 3.14;
+	$labelData: '';
+	@for $i from 0 to 101 {
+		$labelData: $labelData + $i + '%' + '\a';
+	}
+
+	@each $chart, $param in $configs {
+
+		$c: (map-get($param, svgSize) - map-get($param, strokeWidth)) * $pi;
+		$cOffSet: (map-get($param, percentage)/100)*$c;
+
+		.#{$chart} {
+			width: map-get($param, svgSize);
+			height: map-get($param, svgSize);
+			margin: 0;
+			position: relative;
+
+			&.animate {
+				svg .circle-foreground {
+					animation: offset map-get($param, duration) ease-in-out forwards;
+					animation-delay: map-get($param, animationDelay);
+				}
+				figcaption:after {
+					animation: #{$chart}-label map-get($param, duration) steps(map-get($param, percentage)) forwards;
+					animation-delay: map-get($param, animationDelay);
+				}
+			}
+
+			svg {
+				width: 100%;
+				height: 100%;
+				.circle-background {
+					r: (map-get($param, svgSize) - map-get($param, strokeWidth))/2;
+					cx: 50%;
+					cy: 50%;
+					fill: none;
+					stroke: map-get($param, backgroundColor);
+					stroke-width: map-get($param, strokeWidth);
+				}
+				.circle-foreground {
+					@extend .circle-background;
+					stroke: map-get($param, foregroundColor);
+					//stroke-dasharray: $cOffSet $c;
+					//stroke-dashoffset: $cOffSet;
+					stroke-linecap: square;
+					transform-origin: 50% 50%;
+					transform: rotate(-90deg);
+					&.full-storage {
+						stroke: map-get($param, completeColor);
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,503 @@
+// ============================================== //
+// ================ SNAPSHOT 3.0 ================ //
+// ============================================== //
+// ======== by Leighton Sapir (WPMU DEV) ======== //
+// ============================================== //
+
+.wpmud.wps-popup-modal-active {
+	overflow: hidden;
+}
+
+.wpmud .wps-popup-modal {
+	visibility: hidden;
+	display: none;
+	position: fixed;
+	z-index: 999;
+	top: 32px;
+	right: 0;
+	left: 160px;
+	bottom: 0;
+	transform-style: preserve-3d;
+	.wps-popup-mask {
+		opacity: 0;
+		visibility: hidden;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: $color--mineshaft;
+		transition: opacity 0.2s ease;
+	}
+	.wps-popup-content {
+		width: 100%;
+		max-width: 640px;
+		max-height: 100%;
+		opacity: 0;
+		visibility: hidden;
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		padding: 0 20px;
+		transform: translate(-50%, -50%);
+		transition: opacity 0.2s ease;
+		.wpmud-box {
+			overflow: hidden;
+			margin: 0 !important;
+			box-shadow: none;
+		}
+		.wpmud-box .wpmud-box-content {
+			max-height: 770px;
+			overflow-y: auto;
+			padding-bottom: 0;
+			p {
+				margin-top: 3px;
+				margin-bottom: 30px;
+				.button.button-blue {
+					width: 124px;
+					text-align: center;
+				}
+			}
+			.wps-snapshot-key {
+				position: relative;
+				padding: 31px 30px 29px;
+				input[type="text"] {
+					margin-bottom: 0;
+					padding-right: 120px;
+				}
+				.button {
+					width: 110px;
+					position: absolute;
+					top: 31px;
+					right: 30px;
+					border-radius: 0 3px 3px 0 !important;
+					text-align: center;
+				}
+				&.wps-processing {
+					input[type="text"], button {
+						pointer-events: none;
+					}
+					input[type="text"] {
+						background-color: $color--dysphoria;
+						color: $color--silver;
+					}
+					.button {
+						background-color: $color--whitelilac !important;
+						text-indent: -9999px;
+						&:before {
+							content: " ";
+							width: 18px;
+							height: 18px;
+							display: inline-block;
+							position: absolute;
+							top: 11px;
+							left: 46px;
+							border: 2px solid $color--silver;
+							border-bottom-color: $color--steel;
+							border-radius: 100%;
+							background: 0 0;
+							box-sizing: border-box;
+							animation: spinner .75s 0s linear infinite;
+						}
+					}
+				}
+			}
+			.wps-snapshot-error {
+				margin: 0 0 30px;
+				background: $color--carousel;
+				p {
+					margin: 0;
+					color: $color--mineshaft;
+					a, a:hover {
+						border-bottom: 1px solid $color--mineshaft;
+						color: $color--mineshaft;
+						font-weight: 500;
+					}
+				}
+			}
+			&:after {
+				content: " ";
+				height: 160px;
+				display: flex;
+				-webkit-box-flex: 1;
+				-ms-flex: 1;
+				flex: 1;
+				margin: 30px auto 0;
+				background-position: 50% 0%;
+				background-size: 40%;
+				background-image: url(../img/snapshot-hero-standing.svg);
+				background-repeat: no-repeat;
+			}
+			&.no-content-after {
+				margin-bottom: 50px;
+				&:after {
+					content: none;
+				}
+			}
+			@media (max-height: 900px) {
+				max-height: 600px;
+			}
+			@media (max-height: 770px) {
+				max-height: 520px;
+			}
+			@media (max-height: 660px) {
+				max-height: 450px;
+			}
+			@media (max-height: 580px) {
+				max-height: 320px;
+			}
+			@media (max-height: 460px) {
+				max-height: 220px;
+			}
+		}
+	}
+	&.show {
+		display: block;
+		visibility: visible;
+		.wps-popup-mask {
+			opacity: 0.95;
+			visibility: visible;
+		}
+		.wps-popup-content {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+	@media (max-width: 960px) {
+		left: 36px;
+	}
+	@media (max-width: 782px) {
+		left: 0;
+	}
+}
+
+.wpmud .wp-responsive-open .wps-popup-modal {
+	left: 188px;
+}
+
+.wpmud.folded .wps-popup-modal {
+	left: 36px;
+}
+
+// Modal: Welcome
+.wpmud #wps-welcome-message {
+
+	.wpmud-box-content {
+
+		strong {
+			color: $color--mineshaft;
+		}
+
+		&:after {
+			width: 227px;
+			height: 184px;
+			background-position: -12px 2px;
+		}
+	}
+
+	.wps-welcome-message-pro {
+		padding: 15px 0 0;
+		border-top: 1px solid $color--whitelilac;
+		text-align: left;
+
+		h3 {
+			font-size: 15px;
+			font-family: $font;
+			font-weight: 500;
+			text-transform: none;
+			text-align: left;
+		}
+
+		.button.button-blue {
+			width: auto;
+		}
+
+		+ .wps-welcome-message-pro {
+			margin-top: 15px;
+		}
+	}
+
+	.wps-welcome-message-pro.wps-aws-sdk-incompatible {
+		opacity: 0.5;
+		background-color: #f1f1f1;
+		padding: 15px 0px 25px;
+		h3, small {
+			color: #000000;
+		}
+		a.disabled {
+			background-color: #009bda!important;
+			color: #FFF!important;
+			text-shadow: none!important;
+		}
+	}
+
+	.wps-aws-sdk-incompatible-row {
+		opacity: 0.5;
+		background-color: #f1f1f1;
+		// padding: 0 30px;
+		a.disabled {
+			background-color: #009bda!important;
+			color: #FFF!important;
+			text-shadow: none!important;
+		}
+		.start-name {
+			color: #000000;
+		}
+	}
+
+	.row.wps-aws-sdk-incompatible {
+		// padding: 0;
+		opacity: 0.5;
+		background-color: #f1f1f1;
+	}
+
+	table {
+
+		tbody tr {
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: row;
+			align-items: center;
+			border-bottom: 1px solid $color--whitelilac;
+
+			td {
+				flex: 1;
+				padding: 15px 0;
+
+				@include screen('medium') {
+					flex: 0;
+				}
+			}
+
+			td.start-icon {
+				flex: 0 20px;
+
+				@media (max-width: 360px) {
+					display: none;
+				}
+
+				@include screen('medium') {
+					width: 20px;
+					flex: 0;
+				}
+			}
+
+			td.start-name {
+				padding-left: 15px;
+				color: $color--mineshaft;
+				font-size: 15px;
+				font-weight: 500;
+
+				@media (max-width: 360px) {
+					padding-left: 0;
+				}
+			}
+
+			td.start-btn {
+				flex: 0 131px;
+
+				.button {
+					width: 131px;
+					display: block;
+					margin: 0 0 0 auto;
+					text-align: center;
+				}
+
+				@include screen('medium') {
+					width: 131px;
+					flex: 0;
+				}
+			}
+
+			&:before,
+			&:after {
+				content: " ";
+				display: table;
+				*zoom: 1; // IE Fix
+
+				@include screen('medium') {
+					display: none;
+				}
+			}
+
+			&:after {
+				clear: both;
+			}
+
+			&:first-child {
+				border-top: 1px solid $color--whitelilac;
+
+				@include screen('medium') {
+					border-top: 0;
+				}
+			}
+
+			&:last-child {
+
+				td {
+					border-bottom: 0;
+					
+					@include screen('medium') {
+						border-bottom: 1px solid $color--whitelilac;
+					}
+				}
+			}
+
+			@include screen('medium') {
+				display: table-row;
+				border-bottom: 0;
+			}
+		}
+	}
+
+	.wps-welcome-sdk-incomp {
+		background-color: #ffe5e9;
+		width: 100%;
+		display: block;
+		position: relative;
+		margin: 0 0 30px 0;
+		padding: 15px;
+		border: 0;
+		border-radius: 5px;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		-webkit-transform-style: preserve-3d;
+		transform-style: preserve-3d;
+
+		p {
+			margin: 0;
+			color: #333;
+		}
+	}
+}
+
+// Modal: Warning
+.wpmud #wps-destination-warning {
+
+	.wpmud-box-content {
+
+		strong {
+			color: $color--mineshaft;
+		}
+
+		.wps-confirmation-buttons {
+			margin: 0 -30px;
+			padding: 30px;
+			border-top: 1px solid $color--whitelilac;
+
+			.button {
+				display: inline-block;
+
+				&:last-child {
+					float: right;
+				}
+			}
+		}
+
+		&:after {
+			display: none;
+		}
+	}
+}
+
+// Modal: Dynamic
+.wpmud .wps-popup-modal.wps-modal-dynamic {
+
+	.wps-popup-content {
+
+		.wpmud-box {
+			.wpmud-box-content {
+
+				strong {
+					color: $color--mineshaft;
+				}
+
+				.wps-log-box {
+					max-height: 320px;
+					overflow-y: auto;
+					margin: 0 0 30px;
+					padding: 12px 15px;
+					border: 1px solid $color--whitelilac;
+					border-radius: 4px;
+
+					p {
+						margin: 0;
+						padding: 0 0 4px;
+						font-size: 14px;
+						line-height: 22px;
+
+						&:last-child {
+							padding: 0;
+						}
+					}
+				}
+
+				.wps-confirmation-buttons {
+					margin: 0 -30px;
+					padding: 30px;
+					border-top: 1px solid $color--whitelilac;
+
+					&:before, &:after {
+						content: " ";
+						display: table;
+					}
+
+					&:after {
+						clear: both;
+					}
+
+					.button {
+						display: inline-block;
+
+						&.button-blue {
+							float: right;
+						}
+					}
+				}
+
+				&:after {
+					display: none;
+				}
+
+			}
+		}
+	}
+}
+
+// Modal: Hosting
+.wpmud .wps-popup-modal.wps-hosting-backup {
+	.wps-popup-content {
+		width: 440px;
+		.wpmud-box-content {
+			padding-top: 60px;
+			text-align: center;
+		}
+		h2 {
+			color: #333;
+			font: 700 22px/30px "Roboto",Arial,sans-serif;
+			margin-bottom: 15px;
+			text-transform: none;
+			letter-spacing: -0.25px;
+		}
+		p {
+			color: #888888;
+			font-size: 13px;
+			line-height: 22px;
+			text-align: center;
+			&.no-margin-bottom {
+				margin-bottom: 0;
+			}
+		}
+		button.hosting-backup-notice-seen {
+			font-size: 12px;
+			line-height: 16px;
+		}
+		a.wps-view-backups {
+			color: #888888;
+			display: block;
+			margin: 30px 0 0;
+			text-decoration: none;
+		}
+	}
+}

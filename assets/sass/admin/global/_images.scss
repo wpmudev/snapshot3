@@ -1,0 +1,31 @@
+// ============================================== //
+// ================ SNAPSHOT 3.0 ================ //
+// ============================================== //
+// ======== by Leighton Sapir (WPMU DEV) ======== //
+// ============================================== //
+
+.wpmud .snapshot-three .wps-image,
+.wpmud #container.snapshot-three .wps-image {
+	width: 128px;
+	height: 128px;
+	display: block;
+	margin: 1px auto 30px;
+	background: url('../img/sprite.png') no-repeat transparent;
+	background-image: url('../img/sprite.svg'), none;
+	&.img-snappie-one {
+		background-position: -410px -335px;
+	}
+	&.img-snappie-two {
+		background-position: -410px -543px;
+	}
+	&.img-snappie-three {
+		width: 192px;
+		height: 192px;
+		background-position: -380px -738px;
+	}
+	&.img-snappie-four {
+		width: 192px;
+		height: 192px;
+		background-position: -662px -738px;
+	}
+}

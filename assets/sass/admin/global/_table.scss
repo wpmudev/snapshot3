@@ -1,0 +1,164 @@
+// ============================================== //
+// ================ SNAPSHOT 3.0 ================ //
+// ============================================== //
+// ======== by Leighton Sapir (WPMU DEV) ======== //
+// ============================================== //
+
+.snapshot-three table,
+.wpmud #container.snapshot-three table {
+	width: 100%;
+	display: block;
+	table-layout: fixed;
+	thead {
+		display: none;
+		tr th {
+			padding: 13px 0 2px;
+			border-bottom: 0;
+			color: $color--mineshaft;
+			font: 700 13px/30px $font--alt;
+			letter-spacing: -0.25px;
+			text-transform: uppercase;
+			text-align: left;
+		}
+		@include screen('medium') {
+			display: table-header-group;
+		}
+	}
+	tbody {
+		display: block;
+		tr {
+			display: block;
+			th, td {
+				display: block;
+				padding: 10px 0 8px;
+				border-bottom: 0;
+				p {
+					color: $color--steel;
+					font: 400 15px/20px $font;
+					letter-spacing: -0.3px;
+
+					small {
+						display: block;
+						margin-top: -1px;
+						color: $color--steel;
+						letter-spacing: -0.05px;
+					}
+				}
+				.button {
+					margin: 0;
+				}
+				@include screen('medium') {
+					display: table-cell;
+					border-top: 1px solid $color--whitelilac;
+				}
+			}
+			th {
+				color: $color--mineshaft;
+				font: 400 15px/22px $font;
+				text-align: left;
+			}
+			td {
+				color: $color--taupegray;
+				font: 400 13px/22px $font;
+				letter-spacing: -0.27px;
+				.button {
+					visibility: visible;
+				}
+			}
+			@include screen('medium') {
+				display: table-row;
+			}
+		}
+		@include screen('medium') {
+			display: table-row-group;
+		}
+	}
+	tfoot {
+		display: block;
+		tr {
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+			border-top: 1px solid $color--whitelilac;
+			td {
+				display: block;
+				flex: 1;
+				padding-bottom: 15px;
+				border-bottom: 0;
+				.button {
+					width: 100%;
+					visibility: visible;
+					margin: 0;
+					@include screen("xs") {
+						width: auto;
+					}
+				}
+				&:first-child {
+					padding-top: 30px;
+				}
+				&:last-child {
+					padding-bottom: 0;
+					@include screen("medium") {
+						padding-bottom: 10px;
+					}
+				}
+				@include screen('medium') {
+					display: table-cell;
+					padding-top: 30px;
+					padding-bottom: 10px;
+					border-top: 1px solid $color--whitelilac;
+				}
+			}
+			@include screen("xs") {
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-between;
+			}
+			@include screen('medium') {
+				display: table-row;
+				border-top: 0;
+			}
+		}
+		@include screen('medium') {
+			display: table-footer-group;
+		}
+	}
+	&.has-footer {
+		tbody tr:last-child th,
+		tbody tr:last-child td {
+			@include screen("medium") {
+				padding-bottom: 31px;
+			}
+			&:last-child {
+				padding-bottom: 31px;
+				@include screen("medium") {
+					padding-bottom: 31px;
+				}
+			}
+		}
+	}
+	@include screen('medium') {
+		display: table;
+	}
+}
+
+.wps-page-destinations table {
+
+	%prevent-overflow {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	thead tr th {
+		@extend %prevent-overflow;
+	}
+
+	tbody tr {
+		th, td {
+			p, small, & {
+				@extend %prevent-overflow;
+			}
+		}
+	}
+}
